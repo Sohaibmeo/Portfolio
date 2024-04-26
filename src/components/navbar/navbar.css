@@ -1,0 +1,14 @@
+.navbar-wrapper {
+    position: fixed;
+    top: 15px;
+    z-index: 100;
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}

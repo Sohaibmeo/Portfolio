@@ -1,10 +1,22 @@
 :root {
+  --background-color: rgba(255, 255, 255, 0.87);
+  --alt-background-color: #414446;
+  --white: #ffffff;
+  --black: #070707;
+  --text-overall: #213547;
+  
+  --hover-link: rgba(198, 194, 194, 0.95);
+  --hover-button: rgba(198, 194, 194, 0.95);
+  --light-first: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);;
+  --light-second: #ff6b6b;
+  --light-third: #f0f0f0;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   text-align: center;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--background-color);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,27 +24,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+a {
+  font-weight: 500;
+  color: var(--pallete-first);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--hover-color);
+}
+
+/* h1, h2, h3, h4, h5, h6, */
+:where(p) {
+  word-break: break-word;
+}
+
+*{
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+body, html {
+  height: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  
 }
 
 h1 {
@@ -42,17 +55,16 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--black);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--hover-button);
 }
 button:focus,
 button:focus-visible {
@@ -61,13 +73,19 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--text-overall);
+    background-color: var(--white);
   }
   a:hover {
-    color: #747bff;
+    color: var(--hover-color);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--dark-first);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
   }
 }

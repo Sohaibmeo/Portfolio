@@ -1,0 +1,14 @@
+
+.skills-img-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+
+.icon-image{
+    aspect-ratio: 1;
+}
