@@ -9,7 +9,7 @@
   --hover-button: rgba(198, 194, 194, 0.95);
   --light-first: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);;
   --light-second: #ff6b6b;
-  --light-third: #f0f0f0;
+  --light-third: #f5f5f5;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -38,14 +38,12 @@ a:hover {
   word-break: break-word;
 }
 
-*{
+body, html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-}
-
-body, html {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 h1 {

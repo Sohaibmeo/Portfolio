@@ -16,6 +16,7 @@ import TypeORM from "../assets/code-icons/typeorm.svg";
 import Framer from "../assets/code-icons/framer.svg";
 import Scss from "../assets/code-icons/scss.svg";
 import Mui from "../assets/code-icons/mui.svg";
+import Express from "../assets/code-icons/express.svg";
 
 export default function getSkillData() {
   return [
@@ -23,11 +24,6 @@ export default function getSkillData() {
       link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       img: Html,
       alt: "Html",
-    },
-    {
-      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      img: Css,
-      alt: "Css",
     },
     {
       link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -40,9 +36,18 @@ export default function getSkillData() {
       alt: "Typescript",
     },
     { link: "https://reactjs.org/", img: React, alt: "React" },
+    {
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      img: Css,
+      alt: "Css",
+    },
+    { link: "https://www.framer.com/", img: Framer, alt: "Framer" },
+    { link: "https://sass-lang.com/", img: Scss, alt: "Scss" },
+    { link: "https://mui.com/", img: Mui, alt: "Mui" },
     { link: "https://nodejs.org/en/", img: Node, alt: "Nodejs" },
     { link: "https://nestjs.com/", img: NestJs, alt: "Nestjs" },
     { link: "https://nextjs.org/", img: NextJs, alt: "Nextjs" },
+    { link: "https://expressjs.com/", img: Express, alt: "Express" },
     { link: "https://www.mongodb.com/", img: MongoDB, alt: "MongoDB" },
     { link: "https://www.postgresql.org/", img: Postgres, alt: "Postgres" },
     { link: "https://www.prisma.io/", img: Prisma, alt: "Prisma" },
@@ -54,9 +59,6 @@ export default function getSkillData() {
     { link: "https://git-scm.com/", img: Git, alt: "Git" },
     { link: "https://www.docker.com/", img: Docker, alt: "Docker" },
     { link: "https://typeorm.io/", img: TypeORM, alt: "TypeORM" },
-    { link: "https://www.framer.com/", img: Framer, alt: "Framer" },
-    { link: "https://sass-lang.com/", img: Scss, alt: "Scss" },
-    { link: "https://mui.com/", img: Mui, alt: "Mui" },
   ];
 }
 

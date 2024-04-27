@@ -33,12 +33,22 @@ export default function getProjectData() {
     {
       title: "Xfitness Gym Management",
       description:
-        "A full stack application that allows gym owners to manage their gym. The application provides features like managing members, trainers, and classes. It also provides a platform for members to book classes and trainers.We also have face recognition and other cool features",
+        "A full stack application that allows gym owners to manage their members and trainers.",
       link: "#",
-      techStack: ["React","Javascript", "Mui", "MongoDB", "Nodejs"],
+      techStack: ["React","Javascript", "Mui", "MongoDB", "Nodejs", "Express"],
       tag: "Fullstack",
       startDate: new Date("May 12, 2023"),
       github: "https://github.com/Sohaibmeo/gym-web",
+    },
+    {
+      title: "Portfolio",
+      description:
+        "A frontend application that showcases my projects and skills.",
+      link: "#",
+      techStack: ["React", "Typescript"],
+      tag: "Frontend",
+      startDate: new Date("April 25, 2024"),
+      github: "https://github.com/Sohaibmeo/Portfolio",
     },
   ];
 }

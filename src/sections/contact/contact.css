@@ -1,6 +1,7 @@
 .contact-wrapper {
     justify-content: center;
     align-items: center;
+    background-color: var(--alt-background-color);
 }
 
 .contact-form {
@@ -8,3 +9,9 @@
     flex-direction: column;
     column-gap: 2;
 }
+
+@media (prefers-color-scheme: light) {
+    .contact-wrapper {
+      background-color: var(--light-third);
+    }
+  }
