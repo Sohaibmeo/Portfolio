@@ -56,7 +56,7 @@
     justify-content: center;
 }
 .home-title {
-  animation: showup 7s infinite;
+  animation: showup var(--slow-transition-time) infinite;
 }
 .outer-title {
   width: 0px;
@@ -64,11 +64,11 @@
   justify-content: center;
   overflow:hidden;
   white-space:nowrap;
-  animation: reveal 7s infinite;
+  animation: reveal var(--slow-transition-time) infinite;
 }
 .inner-title {
   margin-left: -355px;
-  animation: slidein 7s infinite;
+  animation: slidein var(--slow-transition-time) infinite;
 }
 
 .home-wrapper {
@@ -78,8 +78,18 @@
   justify-content: center;
 }
 
-@media (prefers-reduced-motio) {
-  .home-content {
+@media (prefers-reduced-motion: reduce) {
+  .inner-title{
     animation: none;
+    margin-left: 0px;
+  }
+  .outer-title{
+    animation: none;
+    opacity: 1;
+    width: min-content;
+  }
+  .home-title {
+    animation: none;
+    opacity: 1;
   }
 }

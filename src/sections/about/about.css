@@ -2,13 +2,13 @@
   justify-content: center;
   align-items: center;
   text-align: start;
-  gap: 2;
+  gap: 100px;
   overflow: hidden;
   background-color: var(--alt-background-color);
   flex-wrap: wrap-reverse;
 }
 .about-content {
-  width: 50%;
+  width: 40%;
   min-width: 25%;
 }
 .about-image-container {
@@ -23,7 +23,7 @@
 .about-image-container:hover > .fg-image {
   opacity: 0;
   transition-property: opacity;
-  transition-duration: 2s;
+  transition-duration: var(--default-transition-duration);
   transition-timing-function: ease-out;
 }
 
