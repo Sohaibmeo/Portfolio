@@ -4,6 +4,9 @@
   --white: #ffffff;
   --black: #070707;
   --text-overall: #213547;
+
+  --font-large: 5em;
+  --font-super-large: 7em;
   
   --hover-link: rgba(198, 194, 194, 0.95);
   --hover-button: rgba(198, 194, 194, 0.95);
@@ -11,7 +14,10 @@
   --light-second: #ff6b6b;
   --light-third: #f5f5f5;
 
-  --default-transition-time: 2s;
+  --short-transition-time: 0.4s;
+  --default-quick-transition-time: 0.7s;
+  --default-transition-time: 1s;
+  --medium-transition-time: 2s;
   --slow-transition-time: 7s;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -52,6 +58,7 @@ body, html {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
 }
 
 button {

@@ -1,0 +1,74 @@
+.project-card {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(https://source.unsplash.com/random);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: var(--white);
+  z-index: 1;
+  transition: width var(--short-transition-time) ease-in-out;
+}
+
+.project-card:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(82, 71, 71, 0.5);
+  /* visibility: hidden; */
+  z-index: -1;
+  /* transition: visibility var(--short-transition-time) ease-in-out;
+  transition-delay: var(--short-transition-time); */
+}
+
+.counter {
+  font-size: var(--font-large);
+  position: absolute;
+  margin: 0;
+  word-break: break-all;
+}
+.project-card:hover .counter::before {
+  content: "0";
+}
+.project-card:hover > .counter {
+  font-size: var(--font-super-large);
+  top: 0px;
+  right: 0px;
+}
+.project-card:not(:hover) > *:not(.counter) {
+  opacity: 0;
+  visibility: hidden;
+}
+.project-card:hover {
+  background-color: lightblue;
+  width: 45%;
+}
+
+.project-card-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  text-align: left;
+}
+
+.project-start-date,
+.project-card-description {
+  margin: 10px 0 0 5px;
+  width: 50%;
+}
+
+.project-link {
+  display: flex;
+  gap: 5px;
+}
+
+.project-card-tech-stack {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  bottom: 18px;
+  right: 25px;
+}
