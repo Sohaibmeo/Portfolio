@@ -1,0 +1,10 @@
+.contact-wrapper {
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    column-gap: 2;
+}
