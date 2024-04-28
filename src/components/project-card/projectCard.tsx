@@ -9,6 +9,7 @@ type Project = {
   techStack: string[];
   link: string;
   github: string;
+  background: string;
 };
 
 const ProjectCard = ({
@@ -22,6 +23,7 @@ const ProjectCard = ({
     <div
       className="project-card"
       onClick={() => window.open(project.link, "_blank")}
+      style={{backgroundImage: `url(${project.background})`}}
     >
       <h1 className="counter">{counter}</h1>
       <div className="project-card-footer">

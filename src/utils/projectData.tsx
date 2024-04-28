@@ -9,16 +9,7 @@ export default function getProjectData() {
       tag: "Fullstack",
       startDate: new Date("Feb 28, 2024"),
       github: "https://github.com/Sohaibmeo/BuzzBridge",
-    },
-    {
-      title: "Kanox Template Replica",
-      description:
-        "This is a replica of landing page of Kanox template which is available at ColorLib Kanox",
-      link: "https://sohaibmeo.github.io/SohaibMao.github.io/",
-      techStack: ["Html", "Css"],
-      tag: "Frontend",
-      startDate: new Date("Apr 25, 2022"),
-      github: "https://github.com/Sohaibmeo/SohaibMao.github.io/tree/dev",
+      background: "https://images.unsplash.com/photo-1517816428104-797678c7cf0c",
     },
     {
       title: "Investment On Wheels",
@@ -29,6 +20,7 @@ export default function getProjectData() {
       tag: "Frontend",
       startDate: new Date("Mar 14, 2023"),
       github: "https://github.com/Sohaibmeo/IOW-Frontend",
+      background: "https://images.unsplash.com/photo-1635575623026-9b25cd510e4d",
     },
     {
       title: "Xfitness Gym Management",
@@ -39,6 +31,7 @@ export default function getProjectData() {
       tag: "Fullstack",
       startDate: new Date("May 12, 2023"),
       github: "https://github.com/Sohaibmeo/gym-web",
+      background: "https://images.unsplash.com/photo-1526401485004-46910ecc8e51",
     },
     {
       title: "Portfolio",
@@ -49,6 +42,18 @@ export default function getProjectData() {
       tag: "Frontend",
       startDate: new Date("April 25, 2024"),
       github: "https://github.com/Sohaibmeo/Portfolio",
+      background: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    },
+    {
+      title: "Kanox Template Replica",
+      description:
+        "This is a replica of landing page of Kanox template which is available at ColorLib Kanox",
+      link: "https://sohaibmeo.github.io/SohaibMao.github.io/",
+      techStack: ["Html", "Css"],
+      tag: "Frontend",
+      startDate: new Date("Apr 25, 2022"),
+      github: "https://github.com/Sohaibmeo/SohaibMao.github.io/tree/dev",
+      background: "https://sohaibmeo.github.io/SohaibMao.github.io/xbanner_img.webp",
     },
   ];
 }
