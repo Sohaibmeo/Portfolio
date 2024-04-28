@@ -23,7 +23,7 @@
 .about-image-container:hover > .fg-image {
   opacity: 0;
   transition-property: opacity;
-  transition-duration: var(--default-transition-duration);
+  transition-duration: var(--default-transition-time);
   transition-timing-function: ease-out;
 }
 

@@ -1,3 +1,5 @@
+import SelfPortrait from "../assets/real2.png";
+
 export default function getProjectData() {
   return [
     {
@@ -42,7 +44,7 @@ export default function getProjectData() {
       tag: "Frontend",
       startDate: new Date("April 25, 2024"),
       github: "https://github.com/Sohaibmeo/Portfolio",
-      background: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+      background: SelfPortrait,
     },
     {
       title: "Kanox Template Replica",

@@ -1,0 +1,90 @@
+.avatar-wrapper {
+  --base-size: 90px;
+  --imagesize-hair: calc(var(--base-size) * 4.5);
+  --imagesize-beard: calc(var(--imagesize-hair) * 2);
+  --imagesize-eyes: calc(var(--base-size) * 2.94);
+  --imagesize-eye: calc(var(--imagesize-eyes) / 3.5);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.face {
+  overflow: hidden;
+  width: var(--imagesize-beard);
+  height: 700px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face > * {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.hair {
+  top: 0;
+  left: 50%;
+  width: var(--imagesize-hair);
+  height: aspect-ratio(var(--imagesize-hair) / var(--imagesize-hair));
+}
+.beard {
+  top: 262px;
+  width: var(--imagesize-beard);
+  height: aspect-ratio(var(--imagesize-beard) / var(--imagesize-beard));
+}
+.eyes {
+  top: 230px;
+  left: 49.94%;
+  width: var(--imagesize-eyes);
+  height: aspect-ratio(var(--imagesize-eyes) / var(--imagesize-eyes));
+}
+.left-eye,
+.right-eye {
+  width: var(--imagesize-eye);
+  height: aspect-ratio(var(--imagesize-eye) / var(--imagesize-eye));
+}
+
+.eyes-container, .eye-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 127px;
+  margin-left: 5px;
+}
+
+.eyes-container{
+    gap: calc(var(--imagesize-eye) * 1.22);
+    z-index: 1;
+}
+.eye-container {
+    gap: calc(var(--imagesize-eye) * 1);
+}
+
+.left-eye-container,
+.right-eye-container {
+  width: 60px;
+  height: 90px;
+  clip-path: ellipse(53% 21.5% at 50% 50%);
+}
+
+.left-eyeball,
+.right-eyeball {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.left-eyeball-shine,
+.right-eyeball-shine {
+  width: 30%;
+  height: 20%;
+  background: rgb(192, 176, 176);
+  position: absolute;
+  left: 35%;
+  top: 40%;
+  border-radius: 100%;
+  overflow: hidden;
+}

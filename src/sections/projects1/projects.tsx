@@ -3,7 +3,7 @@ import "../common.css";
 import getProjectData from "../../utils/projectData";
 import ProjectCard from "../../components/project-card/projectCard";
 
-const Projects = () => {
+const Projects1 = () => {
   const projectData = getProjectData();
   return (
     <section id="projects" className="section project-wrapper">
@@ -14,4 +14,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects1;
