@@ -1,75 +1,76 @@
+:root {
+  --base-size: 5vw; /* Using viewport width to scale base size */
+}
+
 .avatar-wrapper {
-  --base-size: 90px;
   --imagesize-hair: calc(var(--base-size) * 4.5);
   --imagesize-beard: calc(var(--imagesize-hair) * 2);
   --imagesize-eyes: calc(var(--base-size) * 2.94);
   --imagesize-eye: calc(var(--imagesize-eyes) / 3.5);
   width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .face {
   overflow: hidden;
   width: var(--imagesize-beard);
-  height: 700px;
+  height: calc(var(--base-size) * 7.78); /* Adjusted to maintain aspect ratio */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .face > * {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .hair {
   top: 0;
-  left: 50%;
-  width: var(--imagesize-hair);
-  height: aspect-ratio(var(--imagesize-hair) / var(--imagesize-hair));
+  width: var(--imagesize-hair);/* Aspect ratio 1:1 */
 }
+
 .beard {
-  top: 262px;
-  width: var(--imagesize-beard);
-  height: aspect-ratio(var(--imagesize-beard) / var(--imagesize-beard));
+  top: calc(var(--base-size) * 2.91);
+  width: var(--imagesize-beard); /* Aspect ratio 1:1 */
 }
+
 .eyes {
-  top: 230px;
-  left: 49.94%;
-  width: var(--imagesize-eyes);
-  height: aspect-ratio(var(--imagesize-eyes) / var(--imagesize-eyes));
+  top: calc(var(--base-size) * 2.56);
+  width: var(--imagesize-eyes);/* Aspect ratio 1:1 */
 }
-.left-eye,
-.right-eye {
-  width: var(--imagesize-eye);
-  height: aspect-ratio(var(--imagesize-eye) / var(--imagesize-eye));
+
+.left-eye, .right-eye {
+  width: var(--imagesize-eye);/* Aspect ratio 1:1 */
 }
 
 .eyes-container, .eye-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 127px;
-  margin-left: 5px;
+  margin-bottom: calc(var(--base-size) * 1.41);
 }
 
-.eyes-container{
-    gap: calc(var(--imagesize-eye) * 1.22);
-    z-index: 1;
+.eyes-container {
+  gap: calc(var(--imagesize-eye) * 1.22);
+  z-index: 1;
 }
+
 .eye-container {
-    gap: calc(var(--imagesize-eye) * 1);
+  gap: calc(var(--imagesize-eye) * 1);
 }
 
-.left-eye-container,
-.right-eye-container {
-  width: 60px;
-  height: 90px;
+.left-eye-container, .right-eye-container {
+  width: calc(var(--base-size) * 0.67);
+  height: calc(var(--base-size) * 1);
   clip-path: ellipse(53% 21.5% at 50% 50%);
 }
 
-.left-eyeball,
-.right-eyeball {
+.left-eyeball, .right-eyeball {
   height: 100%;
   width: 100%;
   position: relative;
@@ -77,8 +78,7 @@
   border-radius: 100%;
 }
 
-.left-eyeball-shine,
-.right-eyeball-shine {
+.left-eyeball-shine, .right-eyeball-shine {
   width: 30%;
   height: 20%;
   background: rgb(192, 176, 176);
