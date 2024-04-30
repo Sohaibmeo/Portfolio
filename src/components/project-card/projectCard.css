@@ -8,7 +8,7 @@
   background-size: cover;
   position: relative;
   color: var(--white);
-  z-index: 1;
+  z-index: var(--zindex-above-normal);
   transition-property: width;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@
   inset: 0;
   background-color: rgba(82, 71, 71, 0.5);
   opacity: 0;
-  z-index: -1;
+  z-index: var(--zindex-below-normal);
   transition-property: opacity;
   transition-delay: var(--short-transition-time);
 }

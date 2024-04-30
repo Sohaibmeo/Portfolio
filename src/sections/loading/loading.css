@@ -1,4 +1,33 @@
 .loading-wrapper{
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    z-index: var(--zindex-loading);
+    background-color: var(--background-color-dark);
+    position: relative;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--text-overall);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner .8s ease-in-out infinite alternate;
+}
+
+@media (prefers-color-scheme: light) {
+    .loading-wrapper {
+        background-color: var(--background-color);
+    } 
+}
+
+@keyframes spinner {
+    to{
+        transform:  rotate(0) scale(1);
+    }
+    from{
+        transform: rotate(360deg) scale(1.2);
+    }
 }

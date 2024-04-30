@@ -2,10 +2,10 @@
 import Navbar from "./components/navbar/navbar"
 import About from "./sections/about/about"
 import Contact from "./sections/contact/contact"
-import Home from "./sections/home/home"
 import Loading from "./sections/loading/loading"
-import Face from "./sections/moving-face/Face"
 import Projects1 from "./sections/projects1/projects"
+import Home from "./sections/home/Home"
+import OldHome from "./sections/old-home/oldHome"
 
 
 function App() {
@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Face />
-      <Loading />
       <Home />
+      <Loading />
+      <OldHome />
       <About />
       <Projects1 />
       <Contact />

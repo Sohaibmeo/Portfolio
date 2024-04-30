@@ -1,10 +1,11 @@
 :root {
-  --background-color: rgba(255, 255, 255, 0.87);
-  --alt-background-color: #414446;
+  --background-color: rgba(255, 255, 255, 1);
+  --background-color-dark: #414446;
   --white: #ffffff;
   --black: #070707;
   --text-overall: #213547;
 
+  --base-size: 5vw;
   --font-large: 5em;
   --font-super-large: 7em;
   
@@ -19,6 +20,15 @@
   --default-transition-time: 1s;
   --medium-transition-time: 2s;
   --slow-transition-time: 7s;
+
+
+  --zindex-media: -2;
+  --zindex-below-normal: -1;
+  --zindex-above-normal: 1;
+  --zindex-navbar: 100;
+  --zindex-modal: 200;
+  --zindex-modal-content: 300;
+  --zindex-loading: 400;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

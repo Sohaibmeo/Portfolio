@@ -1,23 +1,12 @@
-.avatar-wrapper {
-  --base-size: 5vw;
+.face {
   --imagesize-hair: calc(var(--base-size) * 4.5);
   --imagesize-beard: calc(var(--imagesize-hair) * 2);
   --imagesize-eyes: calc(var(--base-size) * 2.94);
   --imagesize-eye: calc(var(--imagesize-eyes) / 3.5);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.face {
   overflow: hidden;
   width: var(--imagesize-beard);
-  height: calc(var(--base-size) * 7.78);
+  aspect-ratio: 1;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .face > * {
@@ -63,6 +52,7 @@
   margin-bottom: calc(var(--base-size) * 1.41);
   margin-left: calc(var(--base-size) * 0.07);
   gap: calc(var(--imagesize-eye));
+  top: calc(var(--imagesize-eyes) * 1.01);
 }
 
 .left-eye,
@@ -101,41 +91,38 @@
 }
 
 @media (min-width: 2000px) {
-  .avatar-wrapper {
+  .face {
     --base-size: 4vw;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1999px) {
-  .avatar-wrapper {
+  .face {
     --base-size: 5vw;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .avatar-wrapper {
+  .face {
     --base-size: 6vw;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .avatar-wrapper {
+  .face {
     --base-size: 8vw;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .avatar-wrapper {
+  .face {
     --base-size: 10vw;
   }
 }
 
 @media (max-width: 575px) {
-  .avatar-wrapper {
+  .face {
     --base-size: 12vw;
-  }
-  .beard {
-    left: -5%;
   }
   .left-eyeball-shine::before,
   .right-eyeball-shine::before {

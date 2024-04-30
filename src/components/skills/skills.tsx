@@ -8,7 +8,6 @@ const Skills = ({width}: {
     width: number | string;
 }) => {
   const skills = getSkillData();
-  console.log(skills)
   return (
     <div className="skills-img-container">
       {skills.map((skill, index) => {
