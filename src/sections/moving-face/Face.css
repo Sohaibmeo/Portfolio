@@ -45,7 +45,7 @@
   width: var(--imagesize-beard);
   height: calc(var(--imagesize-beard) * 0.601);
   transform: scaleX(-1);
-  left: -0.4%;
+  left: 0%;
   clip-path: url(#beard-clip);
 }
 
@@ -133,6 +133,13 @@
 @media (max-width: 575px) {
   .avatar-wrapper {
     --base-size: 12vw;
+  }
+  .beard {
+    left: -5%;
+  }
+  .left-eyeball-shine::before,
+  .right-eyeball-shine::before {
+    border: 5px double var(--background-color);
   }
 }
 
