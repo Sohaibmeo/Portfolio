@@ -41,55 +41,35 @@
   width: var(--imagesize-eyes);
 }
 
-.left-eye,
-.right-eye {
-  width: var(--imagesize-eye);
-}
-
-.eyes-container,
-.eye-container {
+.eyes-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: calc(var(--base-size) * 1.41);
   margin-left: calc(var(--base-size) * 0.07);
-}
-
-.eyes-container {
-  gap: calc(var(--imagesize-eye) * 1.22);
-  z-index: 1;
-}
-
-.eye-container {
   gap: calc(var(--imagesize-eye));
 }
 
-.left-eye-container,
-.right-eye-container {
-  width: calc(var(--base-size) * 0.67);
-  height: calc(var(--base-size));
-  clip-path: ellipse(53% 21.5% at 50% 50%);
-}
-
-.left-eyeball,
-.right-eyeball {
-  height: 100%;
-  width: 100%;
-  position: relative;
+.left-eye,
+.right-eye {
+  width: var(--imagesize-eye);
+  height: calc(var(--imagesize-eye) / 2);
+  clip-path: ellipse(50% 48% at 50% 50%);
+  animation: blinking 2s ease-in-out 1s infinite alternate;
+  background-color: rgb(0, 0, 0);
   overflow: hidden;
-  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-eyeball-shine,
 .right-eyeball-shine {
-  width: 30%;
-  height: 20%;
-  background: rgb(192, 176, 176);
-  position: absolute;
-  left: 35%;
-  top: 40%;
+  --width: 50%;
+  height: calc(var(--width));
+  width: calc(var(--width)/2);
+  background: var(--background-color);
   border-radius: 100%;
-  overflow: hidden;
 }
 
 @media (min-width: 2000px) {
@@ -125,5 +105,23 @@
 @media (max-width: 575px) {
   .avatar-wrapper {
     --base-size: 12vw;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    clip-path: ellipse(50% 2% at 50% 70%);
+  }
+  25% {
+    clip-path: ellipse(50% 48% at 50% 50%);
+  }
+  50% {
+    clip-path: ellipse(50% 48% at 50% 50%);
+  }
+  75% {
+    clip-path: ellipse(50% 48% at 50% 50%);
+  }
+  100% {
+    clip-path: ellipse(50% 48% at 50% 50%);
   }
 }
