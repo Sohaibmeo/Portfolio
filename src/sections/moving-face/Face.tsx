@@ -1,9 +1,7 @@
 import "./Face.css";
 import "../common.css";
-import Hair from "../../assets/pieces/hair.svg";
-import Beard from "../../assets/pieces/lower_head.svg";
-import DragonEyes from "../../assets/pieces/dragon_eyes.svg";
 import { useEffect, useState } from "react";
+import { getBeardClipPath, getEyeClipPath, getHairClipPath } from "../../utils/getFaceData";
 
 const Face = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -26,8 +24,25 @@ const Face = () => {
   return (
     <section className="section avatar-wrapper">
       <div className="face">
-        <img src={Hair} alt="hair" className="hair" />
-        <img src={DragonEyes} alt="eyes" className="eyes" />
+        <svg className="svg">
+          <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
+            <path d={getHairClipPath()}></path>
+          </clipPath>
+        </svg>
+        <svg className="svg">
+          <clipPath id="beard-clip" clipPathUnits="objectBoundingBox" >
+          <path d={getBeardClipPath()} ></path>
+          </clipPath>
+        </svg>
+        <svg className="svg">
+          <clipPath id="eye-clip" clipPathUnits="objectBoundingBox">
+            <path d={getEyeClipPath()} ></path>
+          </clipPath>
+        </svg>
+
+        <div className="hair" />
+        <div className="beard"/>
+        <div className="eyes" />
         <div className="eyes-container">
           <div className="left-eye">
             <div
@@ -46,7 +61,6 @@ const Face = () => {
             ></div>
           </div>
         </div>
-        <img src={Beard} alt="beard" className="beard" />
       </div>
     </section>
   );
