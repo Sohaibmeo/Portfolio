@@ -1,7 +1,7 @@
 
 import "./about.css";
 import "../common.css";
-import Skills from "../../components/skills/skills";
+import Skills from "../../components/skills/Skill";
 
 const About = () => {
   return (

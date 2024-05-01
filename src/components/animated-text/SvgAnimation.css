@@ -1,0 +1,35 @@
+.svg-wrapper {
+  font-weight: 600;
+  width: 20rem;
+}
+
+.svg-animated-text {
+  font-size: 5em;
+  animation: draw calc(var(--default-transition-time)*2) infinite ease-in-out alternate;
+}
+
+@keyframes draw {
+  0% {
+    fill: transparent;
+    stroke: var(--text-overall);
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: transparent;
+    stroke: var(--text-overall);
+  }
+  80% {
+    fill: transparent;
+    stroke: var(--text-overall);
+    stroke-width: 3;
+  }
+  100% {
+    fill: var(--text-overall);
+    stroke: transparent;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}

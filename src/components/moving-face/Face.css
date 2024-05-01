@@ -15,14 +15,14 @@
   transform: translate(-50%, 0);
 }
 
+.left-eye,
+.right-eye,
 .eyes,
 .beard,
 .hair,
 .left-eyeball-shine,
 .right-eyeball-shine {
-  /* background-image: url("https://images.unsplash.com/photo-1714163400262-159571dafbda");
-  background-size: cover; */
-  background-color: var(--black);
+  background-color: var(--background-color-dark);
   z-index: var(--zindex-above-normal);
 }
 
@@ -65,7 +65,6 @@
   height: calc(var(--imagesize-eye) * 0.506);
   clip-path: ellipse(50% 48% at 50% 50%);
   animation: blinking 2s ease-in-out 1s infinite alternate;
-  background-color: var(--black);
   overflow: hidden;
   display: flex;
   justify-content: center;

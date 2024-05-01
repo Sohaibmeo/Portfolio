@@ -1,7 +1,7 @@
 
 
 import getSkillData from "../../utils/getSkillData";
-import "./skills.css";
+import "./Skill.css";
 
 //TODO: we can turn this into a crousal later on
 const Skills = ({width}: {

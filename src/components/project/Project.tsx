@@ -1,6 +1,6 @@
 import { getSingleProjectData } from "../../utils/getSkillData";
 import Git from "../../assets/code-icons/git.svg";
-import "./projectCard.css";
+import "./Project.css";
 
 type Project = {
   startDate: Date;

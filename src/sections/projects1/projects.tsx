@@ -1,7 +1,7 @@
 import "./projects.css";
 import "../common.css";
 import getProjectData from "../../utils/projectData";
-import ProjectCard from "../../components/project-card/projectCard";
+import ProjectCard from "../../components/project/Project";
 
 const Projects1 = () => {
   const projectData = getProjectData();
