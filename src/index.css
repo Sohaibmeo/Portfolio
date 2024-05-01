@@ -19,6 +19,7 @@
   --default-quick-transition-time: 0.7s;
   --default-transition-time: 1s;
   --medium-transition-time: 2s;
+  --long-transition-time: 4s;
   --slow-transition-time: 7s;
 
 

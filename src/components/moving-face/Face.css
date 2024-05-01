@@ -20,8 +20,12 @@
 .hair,
 .left-eyeball-shine,
 .right-eyeball-shine {
-  background: var(--black);
+  /* background-image: url("https://images.unsplash.com/photo-1714163400262-159571dafbda");
+  background-size: cover; */
+  background-color: var(--black);
+  z-index: var(--zindex-above-normal);
 }
+
 .hair {
   top: 0;
   width: var(--imagesize-hair);

@@ -1,7 +1,7 @@
 import "./loading.css";
 import "../common.css";
 import { useEffect, useState } from "react";
-// import AnimatedText from "../../components/animated/text";
+import AnimatedText from "../../components/animated/text";
 
 const Loading = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -17,10 +17,13 @@ const Loading = () => {
   }, []);
   return (
     <section
-      className={`section loading-wrapper ${loaded ? "hidden" : "visible"}`}
+      className={`loading-wrapper ${loaded && "hidden"}`}
     >
-      {/* <AnimatedText /> */}
-      <div className="loader" />
+      <div className="loading-container">
+      {
+        loaded ? <AnimatedText /> : loaded === null ? <p>Loading...</p> : <div className="loader" />
+      }
+      </div>
     </section>
   );
 };

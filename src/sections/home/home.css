@@ -6,6 +6,7 @@
     flex: 0 0 33.3333%;
     color: var(--text-color);
     overflow: hidden;
+    position: relative;
 }
 
 .home-buttons {
@@ -16,3 +17,15 @@
     height: auto;
     margin: auto;
 }
+
+/* .behind-face-image {
+    z-index: var(--zindex-below-normal);
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+} */

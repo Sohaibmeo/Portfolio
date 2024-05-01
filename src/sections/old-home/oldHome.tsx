@@ -1,13 +1,13 @@
 import "./oldHome.css";
 import "../common.css";
-import Video from "../../assets/video.mp4";
+// import Video from "../../assets/video.mp4";
 
 const OldHome = () => {
   return (
     <section id="home2" className="section home2-wrapper">
-      <video autoPlay muted loop id="video" className="home2-video">
+      {/* <video autoPlay muted loop id="video" className="home2-video">
         <source src={Video} type="video/mp4" />
-      </video>
+      </video> */}
       {/* <img src="https://images.pexels.com/photos/2438212/pexels-photo-2438212.jpeg" className="home2-video" alt="" /> */}
       {/* <div className="home2-image" /> */}
       <div className="home2-content">
