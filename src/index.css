@@ -1,7 +1,7 @@
 :root {
   --background-color: rgba(255, 255, 255, 1);
   --background-color-dark: #414446;
-  --white: #ffffff;
+  --white: floralwhite;
   --black: #070707;
   --text-overall: #213547;
 
@@ -13,7 +13,7 @@
   --hover-button: rgba(198, 194, 194, 0.95);
   --light-first: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);;
   --light-second: #ff6b6b;
-  --light-third: #f5f5f5;
+  --light-third: #cec5c5;
 
   --short-transition-time: 0.4s;
   --default-quick-transition-time: 0.7s;
@@ -93,7 +93,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--text-overall);
-    background-color: var(--white);
+    background-color: var(--background-color);
   }
   a:hover {
     color: var(--hover-color);

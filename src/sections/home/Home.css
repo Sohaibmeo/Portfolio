@@ -18,6 +18,12 @@
     margin: auto;
 }
 
+@media (prefers-color-scheme: light) {
+    .home-wrapper {
+        background-color: var(--white);
+    }
+}
+
 /* .behind-face-image {
     z-index: var(--zindex-below-normal);
     position: absolute;

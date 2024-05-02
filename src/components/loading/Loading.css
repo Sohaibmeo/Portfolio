@@ -16,7 +16,7 @@
 .loader {
   width: 100px;
   height: 100px;
-  border: 10px solid var(--text-overall);
+  border: 10px solid var(--background-color);
   border-left-color: transparent;
   border-right-color: transparent;
   border-radius: 50%;
@@ -26,6 +26,9 @@
 @media (prefers-color-scheme: light) {
   .loading-wrapper {
     background-color: var(--background-color);
+  }
+  .loader {
+    border: 10px solid var(--text-overall);
   }
 }
 

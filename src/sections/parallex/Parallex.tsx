@@ -1,9 +1,11 @@
-import './Parallex.css'
+import "./Parallex.css";
 
 const Parallex = () => {
   return (
-    <section className='section'>Parallex</section>
-  )
-}
+    <section className="layer-wrapper">
+      <div>Parallex</div>
+    </section>
+  );
+};
 
-export default Parallex
+export default Parallex;

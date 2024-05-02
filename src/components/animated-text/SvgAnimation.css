@@ -1,4 +1,5 @@
 .svg-wrapper {
+  --svg-color: var(--background-color);
   font-weight: 600;
   width: 20rem;
 }
@@ -8,25 +9,31 @@
   animation: draw calc(var(--default-transition-time)*2) infinite ease-in-out alternate;
 }
 
+@media (prefers-color-scheme: light) {
+  .svg-animated-text {
+    --svg-color: var(--text-overall);
+  }
+}
+
 @keyframes draw {
   0% {
     fill: transparent;
-    stroke: var(--text-overall);
+    stroke: var(--svg-color);
     stroke-dashoffset: 0%;
     stroke-dasharray: 0 50%;
     stroke-width: 2;
   }
   70% {
     fill: transparent;
-    stroke: var(--text-overall);
+    stroke: var(--svg-color);
   }
   80% {
     fill: transparent;
-    stroke: var(--text-overall);
+    stroke: var(--svg-color);
     stroke-width: 3;
   }
   100% {
-    fill: var(--text-overall);
+    fill: var(--svg-color);
     stroke: transparent;
     stroke-dashoffset: -25%;
     stroke-dasharray: 50% 0;

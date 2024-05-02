@@ -7,7 +7,7 @@
   background-position: center;
   background-size: cover;
   position: relative;
-  color: var(--white);
+  color: var(--background-color);
   z-index: var(--zindex-above-normal);
   transition-property: width;
   overflow: hidden;
