@@ -1,4 +1,4 @@
-import "./oldHome.css";
+import "./OldHome.css";
 import "../common.css";
 // import Video from "../../assets/video.mp4";
 

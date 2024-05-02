@@ -1,11 +1,11 @@
 
 import Navbar from "./components/navbar/Navbar"
-import About from "./sections/about/about"
-import Contact from "./sections/contact/contact"
-import Projects1 from "./sections/projects1/projects"
+import Projects1 from "./sections/projects1/Projects1"
 import Home from "./sections/home/Home"
-import OldHome from "./sections/old-home/oldHome"
 import Loading from "./components/loading/Loading"
+import OldHome from "./sections/old-home/OldHome"
+import About from "./sections/about/About"
+import Contact from "./sections/contact/Contact"
 
 function App() {
 
