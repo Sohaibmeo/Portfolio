@@ -1,35 +1,17 @@
 import "./Face.css";
-import { useState, useCallback } from "react";
 import {
   getBeardClipPath,
   getEyeClipPath,
   getHairClipPath,
 } from "../../utils/getFaceData";
-import { motion } from "framer-motion";
 
-const Face = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = useCallback((event: any) => {
-    const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
-    const posY = (event.clientY - window.innerHeight / 2) / window.innerHeight;
-    console.log("working")
-    setPosition({ x: posX, y: posY });
-  },[]);
-
-  const handleMouseEnter = useCallback(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove])
-  const handleMouseLeave = useCallback(() => {
-    document.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
+const Face = ({position}:{
+  position: {x: number, y: number}
+}) => {
 
   return (
-    <motion.div
+    <div
       className="face"
-      onViewportEnter={handleMouseEnter}
-      onViewportLeave={handleMouseLeave}
-      viewport={{ amount: 0.5 }}
     >
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
@@ -68,7 +50,7 @@ const Face = () => {
           ></div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
