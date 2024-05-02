@@ -1,4 +1,4 @@
-.loading-wrapper {
+.loading-container {
   z-index: var(--zindex-loading);
   background-color: var(--background-color-dark);
   position: fixed;
@@ -24,7 +24,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .loading-wrapper {
+  .loading-container {
     background-color: var(--background-color);
   }
   .loader {

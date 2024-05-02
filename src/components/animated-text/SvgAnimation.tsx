@@ -2,7 +2,7 @@ import './SvgAnimation.css'
 
 const SvgAnimation = () => {
   return (
-    <svg className='svg-wrapper'>
+    <svg className='svg-container'>
       <text x="30%" y="50%" dy={'1rem'} textAnchor="middle" className='svg-animated-text'>
         M
       </text>

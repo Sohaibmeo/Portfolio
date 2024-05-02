@@ -8,7 +8,7 @@ const ScrollProgress = () => {
     damping: 30,
     restDelta: 0.001,
   });
-  return <motion.div transition={{origin}} style={{ scaleX: scaleX }} className="progress" />;
+  return <motion.div style={{ scaleX: scaleX }} className="progress" />;
 };
 
 export default ScrollProgress;

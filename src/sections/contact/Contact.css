@@ -1,4 +1,4 @@
-.contact-wrapper {
+.contact-container {
     justify-content: center;
     align-items: center;
     background-color: var(--background-color-dark);
@@ -11,7 +11,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    .contact-wrapper {
+    .contact-container {
       background-color: var(--light-third);
     }
 }

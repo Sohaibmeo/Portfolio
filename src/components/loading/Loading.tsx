@@ -16,7 +16,7 @@ const Loading = () => {
     };
   }, []);
   return (
-    <section className={`loading-wrapper ${loaded && "hidden"}`}>
+    <section className={`loading-container ${loaded && "hidden"}`}>
       <SvgAnimation />
         {/* {loaded ? (
           // <AnimatedText />

@@ -19,10 +19,10 @@ const Contact = () => {
   //   });
   // };
   return (
-    <section id="contact" className="section contact-wrapper">
+    <section id="contact" className="section contact-container">
       <div>
         <h2 className="section-title">Contact</h2>
-        <div className="contact-wrapper">
+        <div className="contact-container">
           <form className="contact-form" 
           // onSubmit={handleSubmit}
           >
@@ -67,7 +67,7 @@ const Contact = () => {
             <button type="submit">Submit</button>
           </form>
         </div>
-        <div className="social-links-wrapper">
+        <div className="social-links-container">
           <a
             href="https://www.linkedin.com/in/sohaibfinale/"
             target="_blank"

@@ -8,7 +8,7 @@ const OldHome = () => {
         <source src={Video} type="video/mp4" />
       </video> */}
       {/* <img src="https://images.pexels.com/photos/2438212/pexels-photo-2438212.jpeg" className="home2-video" alt="" /> */}
-      {/* <div className="home2-image" /> */}
+      <div className="home2-image" />
       <div className="home2-content">
         <h1 className="home2-title">Hi, <span className="outer-title"><span className="inner-title">I'm Sohaib Meo</span></span></h1>
         <p className="text">

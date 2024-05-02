@@ -5,7 +5,7 @@ import ProjectCard from "../../components/project/Project";
 const Projects1 = () => {
   const projectData = getProjectData();
   return (
-    <section id="projects" className="section project-wrapper">
+    <section id="projects" className="section project-container">
       {projectData.map((project, index) => {
         return <ProjectCard project={project} counter={index+1} key={index} />;
       })}
