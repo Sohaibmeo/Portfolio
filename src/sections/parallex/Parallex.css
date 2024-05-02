@@ -2,20 +2,24 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-behavior: smooth;
 }
 
 .bg1, .bg2, .bg3, .bg4{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: absolute;
+    z-index: var(--zindex-media);
     height: 50%;
     width: 100%;
     top: 0;
 }
 .text-layer {
     position: absolute;
-    height: 100vh;
+    top: 0;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -31,13 +35,13 @@
 }
 
 .bg2 {
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+    background-image: url('https://source.unsplash.com/random');
 }
 
 .bg3 {
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+    background-image: url('https://source.unsplash.com/random/?city,night');
 }
 
 .bg4 {
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+    background-image: url('https://source.unsplash.com/random/?sexy,sex');
 }

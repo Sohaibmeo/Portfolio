@@ -1,6 +1,0 @@
-.section{
-    display: flex;
-    height: 100vh;
-    scroll-snap-align: center;
-    scroll-behavior: smooth;
-}

@@ -55,6 +55,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: var(--zindex-above-normal);
 }
 .home2-title {
   animation: showup var(--slow-transition-time) infinite;
@@ -84,16 +85,15 @@
   height: 100%;
   background-color: rgba(175, 163, 163, 0.7);
   z-index: var(--zindex-below-normal);
-
 }
-.home2-video{
+/* .home2-video{
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   inset: 0;
   z-index: var(--zindex-media);
-}
+} */
 
 .home2-image {
   background-image: url("https://images.unsplash.com/photo-1714508862788-44e45c4315d0");
