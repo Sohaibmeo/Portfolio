@@ -1,0 +1,10 @@
+.progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    z-index: var(--zindex-navbar);
+    background: var(--light-second);
+    top: 0;
+    transform-origin: 0%;
+  }

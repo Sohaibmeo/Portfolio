@@ -7,12 +7,15 @@ import OldHome from "./sections/old-home/OldHome"
 import About from "./sections/about/About"
 import Contact from "./sections/contact/Contact"
 import Parallex from "./sections/parallex/Parallex"
+import ScrollProgress from "./components/scroll-progress/ScrollProgress"
 
 function App() {
 
   return (
     <>
       <Navbar />
+      <ScrollProgress />
+      
       <Home />
       <Parallex />
       <Loading />

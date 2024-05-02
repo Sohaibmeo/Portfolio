@@ -19,11 +19,11 @@
   position: absolute;
 }
 .layer-wrapper div:nth-child(1) {
-  left: 50%;
+  left: 45%;
   top: 0%;
 }
 .layer-wrapper div:nth-child(2) {
-  left: 50%;
+  left: 45%;
   top: 50%;
 }
 .layer-wrapper div:nth-child(3) {
@@ -35,7 +35,7 @@
   top: 50%;
 }
 .layer-wrapper div:nth-child(5) {
-  left: 50%;
+  left: 45%;
   bottom: 0%;
 }
 

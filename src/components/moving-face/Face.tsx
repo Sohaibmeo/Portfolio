@@ -29,6 +29,7 @@ const Face = () => {
       className="face"
       onViewportEnter={handleMouseEnter}
       onViewportLeave={handleMouseLeave}
+      viewport={{ amount: 0.5 }}
     >
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">

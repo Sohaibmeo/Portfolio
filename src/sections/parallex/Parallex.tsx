@@ -1,34 +1,20 @@
+import { useRef } from "react";
 import "./Parallex.css";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 const Parallex = () => {
+  const parallexSectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: parallexSectionRef,
+    offset: ["start end", "end end"],
+  });
   return (
-    <motion.section
-      className="layer-wrapper"
-      initial={{ opacity: 0.25 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
-      <motion.div initial={{ x: "-50%", y: "50%" }}>Parallex</motion.div>
-      <motion.div
-        animate={{
-          scale: [1, 2, 2, 1, 1],
-          rotate: [0, 0, 270, 270, 0],
-          borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-        }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-          repeat: Infinity,
-          repeatDelay: 1
-        }}
-      >
-        Parallex
-      </motion.div>
-      <motion.div initial={{ y: "-50%" }}>Parallex</motion.div>
-      <motion.div initial={{ y: "-50%" }}>Parallex</motion.div>
-      <motion.div initial={{ x: "-50%", y: "-50%" }}>Parallex</motion.div>
+    <motion.section className="layer-wrapper" >
+      <motion.div style={{position:"sticky", zIndex: 999}}>Parallex{scrollYProgress.get()}</motion.div>
+      <motion.div ref={parallexSectionRef}>Parallex</motion.div>
+      <motion.div>Parallex</motion.div>
+      <motion.div>Parallex</motion.div>
+      <motion.div>Parallex</motion.div>
     </motion.section>
   );
 };
