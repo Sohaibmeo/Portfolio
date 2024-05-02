@@ -1,5 +1,4 @@
 import "./OldHome.css";
-import "../common.css";
 // import Video from "../../assets/video.mp4";
 
 const OldHome = () => {

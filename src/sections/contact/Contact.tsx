@@ -1,5 +1,4 @@
 import "./Contact.css";
-import "../common.css";
 import Linkedin from "../../assets/linkedin.svg";
 import Instagram from "../../assets/instagram.svg";
 import Whatsapp from "../../assets/whatsapp.svg";

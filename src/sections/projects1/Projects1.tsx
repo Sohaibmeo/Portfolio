@@ -1,5 +1,4 @@
 import "./Projects1.css";
-import "../common.css";
 import getProjectData from "../../utils/projectData";
 import ProjectCard from "../../components/project/Project";
 

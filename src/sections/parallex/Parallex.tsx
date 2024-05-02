@@ -2,7 +2,7 @@ import './Parallex.css'
 
 const Parallex = () => {
   return (
-    <div>Parallex</div>
+    <section className='section'>Parallex</section>
   )
 }
 

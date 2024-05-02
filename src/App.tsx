@@ -6,6 +6,7 @@ import Loading from "./components/loading/Loading"
 import OldHome from "./sections/old-home/OldHome"
 import About from "./sections/about/About"
 import Contact from "./sections/contact/Contact"
+import Parallex from "./sections/parallex/Parallex"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <Navbar />
       <Home />
+      <Parallex />
       <Loading />
       <OldHome />
       <About />
