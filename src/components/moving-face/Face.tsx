@@ -1,40 +1,35 @@
 import "./Face.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import {
   getBeardClipPath,
   getEyeClipPath,
   getHairClipPath,
 } from "../../utils/getFaceData";
+import { motion } from "framer-motion";
 
 const Face = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isInside, setIsInside] = useState(false);
 
-  const handleMouseMove = (event: any) => {
+  const handleMouseMove = useCallback((event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
-    const posY =
-      (event.clientY - window.innerHeight / 2) / window.innerHeight;
+    const posY = (event.clientY - window.innerHeight / 2) / window.innerHeight;
+    console.log("working")
     setPosition({ x: posX, y: posY });
-  };
+  },[]);
 
-  const handleMouseEnter = () => {
-    setIsInside(true);
+  const handleMouseEnter = useCallback(() => {
     document.addEventListener("mousemove", handleMouseMove);
-  }
-  const handleMouseLeave = () => {
-    setIsInside(false);
+  }, [handleMouseMove])
+  const handleMouseLeave = useCallback(() => {
     document.removeEventListener("mousemove", handleMouseMove);
-  }
-
-  //call the mouse leave when you scroll a lot down ok?
+  }, [handleMouseMove]);
 
   return (
-    <div className="face" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div className="face-debugger">
-        <h6>Position X: {position.x}</h6>
-        <h6>Position Y: {position.y}</h6>
-        <h6>Inside: {isInside.toString()}</h6>
-      </div>
+    <motion.div
+      className="face"
+      onViewportEnter={handleMouseEnter}
+      onViewportLeave={handleMouseLeave}
+    >
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
           <path d={getHairClipPath()}></path>
@@ -72,7 +67,7 @@ const Face = () => {
           ></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
