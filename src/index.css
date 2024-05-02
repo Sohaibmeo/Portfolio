@@ -3,7 +3,11 @@
   --background-color-dark: #414446;
   --white: floralwhite;
   --black: #070707;
+
   --text-overall: #213547;
+  --text-black: #000000;
+  --text-shadow-dark: 0 0 10px rgba(0, 0, 0, 0.5);
+  --text-shadow-light: 0 0 10px rgba(255, 255, 255, 0.5);
 
   --base-size: 5vw;
   --font-large: 5em;

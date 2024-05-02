@@ -27,6 +27,12 @@
   position: relative;
 }
 
+.face-debugger{
+  position: absolute;
+  z-index: var(--zindex-navbar);
+  color: var(--background-color);
+}
+
 
 .svg {
   width: 0;

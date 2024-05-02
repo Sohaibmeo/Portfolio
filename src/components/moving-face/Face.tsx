@@ -8,6 +8,7 @@ import {
 
 const Face = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isInside, setIsInside] = useState(false);
 
   const handleMouseMove = (event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
@@ -17,9 +18,11 @@ const Face = () => {
   };
 
   const handleMouseEnter = () => {
+    setIsInside(true);
     document.addEventListener("mousemove", handleMouseMove);
   }
   const handleMouseLeave = () => {
+    setIsInside(false);
     document.removeEventListener("mousemove", handleMouseMove);
   }
 
@@ -27,6 +30,11 @@ const Face = () => {
 
   return (
     <div className="face" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="face-debugger">
+        <h6>Position X: {position.x}</h6>
+        <h6>Position Y: {position.y}</h6>
+        <h6>Inside: {isInside.toString()}</h6>
+      </div>
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
           <path d={getHairClipPath()}></path>
