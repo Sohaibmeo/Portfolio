@@ -1,39 +1,64 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./CursorAnimation.css";
 
 const CursorAnimation = ({
-  size,
+  content = "",
+  size = 10,
+  borderSize = 40,
+  borderBackgroundSize = 1,
   show = false,
-  backgroundColor = "black",
+  backgroundColorCursor = "black",
+  backgroundColorBorder = "rgba(255,255,255,1)",
 }: {
-  size: number;
+  size?: number;
+  borderSize?: number;
+  content?: string;
+  borderBackgroundSize?: number;
   show?: boolean;
-  backgroundColor?: string;
+  backgroundColorCursor?: string;
+  backgroundColorBorder?: string;
 }) => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [cursorBorderPos, setCursorBorderPos] = useState({ x: 0, y: 0 });
+  const [outOfBounds, setOutOfBounds] = useState(false);
 
-  const handleMouseMove = (event: MouseEvent) => {
+  const handleMouseAnimation = useCallback((event: MouseEvent) => {
     setCursorPos({ x: event.clientX, y: event.clientY });
-  };
+    if (
+      event.clientX < 10 ||
+      event.clientX > window.innerWidth - 10 ||
+      event.clientY < 10 ||
+      event.clientY > window.innerHeight - 10
+    ) {
+      // Todo: Out of bounds should add a class that changes cursor instead of hiding it
+      setOutOfBounds(true);
+    } else {
+      console.log(
+        "Event clientX: ",
+        event.clientX,
+        "Event clientY: ",
+        event.clientY,
+      );
+      setOutOfBounds(false);
+    }
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    document.addEventListener("mousemove", handleMouseAnimation);
+  }, [handleMouseAnimation]);
+  const handleMouseLeave = useCallback(() => {
+    document.removeEventListener("mousemove", handleMouseAnimation);
+  }, [handleMouseAnimation]);
 
   useEffect(() => {
-    const updateCursorBorder = () => {
-      const easing = 8; // Speed of the following effect
-      setCursorBorderPos(prev => ({
-        x: prev.x + (cursorPos.x - prev.x) / easing,
-        y: prev.y + (cursorPos.y - prev.y) / easing
-      }));
-      requestAnimationFrame(updateCursorBorder);
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    updateCursorBorder(); // Start the animation loop
-
+    if (show) {
+      handleMouseEnter();
+    } else {
+      handleMouseLeave();
+    }
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", handleMouseAnimation);
     };
-  }, [cursorPos]); // Dependency on cursorPos to create a smooth transition effect
+  }, [show]);
 
   return (
     <>
@@ -42,19 +67,22 @@ const CursorAnimation = ({
         style={{
           width: size,
           height: size,
-          transform: `translate(${cursorPos.x - (size / 2)}px, ${cursorPos.y - (size / 2)}px)`,
-          display: show ? "block" : "none",
-          backgroundColor,
+          transform: `translate(${cursorPos.x - size / 2}px, ${cursorPos.y - size / 2}px)`,
+          backgroundColor: backgroundColorCursor,
+          display: outOfBounds || !show ? "none" : "flex",
         }}
-      />
+      >
+        <h6>{content}</h6>
+      </div>
       <div
         className="mouse-circle border"
         style={{
-          width: size * 1.5, // Larger size for the following cursor
-          height: size * 1.5,
-          transform: `translate(${cursorBorderPos.x - (size * 0.75)}px, ${cursorBorderPos.y - (size * 0.75)}px)`,
-          display: show ? "block" : "none",
-          backgroundColor: "rgba(255,255,255,0.5)", // Semi-transparent white for the border cursor
+          width: borderSize,
+          height: borderSize,
+          border: `${borderBackgroundSize}px solid ${backgroundColorBorder}`,
+          transform: `translate(${cursorPos.x - borderSize / 2 - borderBackgroundSize}px, ${cursorPos.y - borderSize / 2 - borderBackgroundSize}px)`,
+          backgroundColor: "transparent",
+          display: outOfBounds || !show ? "none" : "flex",
         }}
       />
     </>

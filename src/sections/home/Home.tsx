@@ -10,7 +10,6 @@ const Home: React.FC = () => {
   const handleMouseMove = useCallback((event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
     const posY = (event.clientY - window.innerHeight / 2) / window.innerHeight;
-    console.log("working");
     setPosition({ x: posX, y: posY });
     
   }, []);
@@ -28,8 +27,7 @@ const Home: React.FC = () => {
     onViewportLeave={handleMouseLeave}
     viewport={{ amount: 0.5 }}
     className="section home-container">
-      <CursorAnimation size={200} show={true} backgroundColor="black" />
-      {/* <div className="behind-face-image"><h1>Behind My Image</h1></div> */}
+      <CursorAnimation show={true}/>
       <div className="home-buttons home-contact">Contact Me</div>
       <div>
         <Face position={position}/>
