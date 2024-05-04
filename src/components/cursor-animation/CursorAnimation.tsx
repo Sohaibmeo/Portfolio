@@ -29,7 +29,6 @@ const CursorAnimation = ({
       event.clientY < 10 ||
       event.clientY > window.innerHeight - 10
     ) {
-      // Todo: Out of bounds should add a class that changes cursor instead of hiding it
       setOutOfBounds(true);
     } else {
       console.log(
@@ -50,15 +49,10 @@ const CursorAnimation = ({
   }, [handleMouseAnimation]);
 
   useEffect(() => {
-    if (show) {
-      handleMouseEnter();
-    } else {
-      handleMouseLeave();
-    }
     return () => {
       document.removeEventListener("mousemove", handleMouseAnimation);
     };
-  }, [show]);
+  }, []);
 
   return (
     <>
@@ -69,7 +63,7 @@ const CursorAnimation = ({
           height: size,
           transform: `translate(${cursorPos.x - size / 2}px, ${cursorPos.y - size / 2}px)`,
           backgroundColor: backgroundColorCursor,
-          display: outOfBounds || !show ? "none" : "flex",
+          display: outOfBounds ? "none" : "flex",
         }}
       >
         <h6>{content}</h6>
@@ -77,9 +71,9 @@ const CursorAnimation = ({
       <div
         className="mouse-circle border"
         style={{
-          width: borderSize,
-          height: borderSize,
-          border: `${borderBackgroundSize}px solid ${backgroundColorBorder}`,
+          width: show? borderSize : 0,
+          height: show? borderSize : 0,
+          border: `${show ? borderBackgroundSize : 0}px solid ${backgroundColorBorder}`,
           transform: `translate(${cursorPos.x - borderSize / 2 - borderBackgroundSize}px, ${cursorPos.y - borderSize / 2 - borderBackgroundSize}px)`,
           backgroundColor: "transparent",
           display: outOfBounds || !show ? "none" : "flex",
