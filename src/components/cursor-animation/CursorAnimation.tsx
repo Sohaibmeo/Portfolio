@@ -1,4 +1,4 @@
-import { useCursor } from "../../contexts/CursorAnimation";
+import { useCursor } from "../../contexts/Cursor";
 import "./CursorAnimation.css";
 
 const CursorAnimation: React.FC = () => {
@@ -11,7 +11,6 @@ const CursorAnimation: React.FC = () => {
     borderBackgroundSize,
     backgroundColorCursor,
     backgroundColorBorder,
-    show,
   } = useCursor();
 
   return (
@@ -31,12 +30,11 @@ const CursorAnimation: React.FC = () => {
       <div
         className="mouse-circle border"
         style={{
-          width: show ? borderSize : 0,
-          height: show ? borderSize : 0,
-          border: `${show ? borderBackgroundSize : 0}px solid ${backgroundColorBorder}`,
+          width: borderSize,
+          height: borderSize,
+          border: `${borderSize ? borderBackgroundSize : 0}px solid ${backgroundColorBorder}`,
           transform: `translate(${cursorPos.x - borderSize / 2 - borderBackgroundSize}px, ${cursorPos.y - borderSize / 2 - borderBackgroundSize}px)`,
           backgroundColor: "transparent",
-          display: outOfBounds || !show ? "none" : "flex",
         }}
       />
     </>

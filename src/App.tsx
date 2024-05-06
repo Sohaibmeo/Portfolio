@@ -8,7 +8,7 @@ import About from "./sections/about/About"
 import Contact from "./sections/contact/Contact"
 import Parallex from "./sections/parallex/Parallex"
 import ScrollProgress from "./components/scroll-progress/ScrollProgress"
-import CursorProvider from "./contexts/CursorAnimation"
+import CursorProvider from "./contexts/Cursor"
 import CursorAnimation from "./components/cursor-animation/CursorAnimation"
 
 function App() {

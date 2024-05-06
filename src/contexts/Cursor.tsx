@@ -79,7 +79,7 @@ const CursorProvider: React.FC<CursorProviderProps> = ({ children }) => {
             borderBackgroundSize: size,
           })),
         toggleShow: () =>
-          setCursorSettings((prev) => ({ ...prev, show: !prev.show })),
+          setCursorSettings((prev) => ({ ...prev, borderSize: prev.borderSize > 0 ? 0 : 40 })),
         setBackgroundColorCursor: (color: string) =>
           setCursorSettings((prev) => ({
             ...prev,
