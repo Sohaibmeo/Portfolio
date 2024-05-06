@@ -5,7 +5,6 @@
   pointer-events: none;
   z-index: var(--zindex-cursor);
   pointer-events: none;
-  /* mix-blend-mode: difference; */
   color: white;
   justify-content: center;
   align-items: center;

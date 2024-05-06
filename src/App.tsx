@@ -8,22 +8,25 @@ import About from "./sections/about/About"
 import Contact from "./sections/contact/Contact"
 import Parallex from "./sections/parallex/Parallex"
 import ScrollProgress from "./components/scroll-progress/ScrollProgress"
+import CursorProvider from "./contexts/CursorAnimation"
+import CursorAnimation from "./components/cursor-animation/CursorAnimation"
 
 function App() {
 
   return (
-    <>
+    <CursorProvider>
+      <CursorAnimation />
+      <Loading />
       <Navbar />
+
       <ScrollProgress />
-      
       <Home />
       <Parallex />
-      <Loading />
       <OldHome />
       <About />
       <Projects1 />
       <Contact />
-    </>
+    </CursorProvider>
   )
 }
 
