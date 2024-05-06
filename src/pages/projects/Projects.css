@@ -2,20 +2,20 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 100vh;
-    scroll-snap-align: center;
-    scroll-behavior: smooth;
+    height: 400vh;
 }
 
 .bg1, .bg2, .bg3, .bg4{
+    scroll-snap-align: center;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     z-index: var(--zindex-media);
-    height: 50%;
+    height: 100vh;
     width: 100%;
     top: 0;
 }
+
 .text-layer {
     position: absolute;
     top: 0;
@@ -43,5 +43,5 @@
 }
 
 .bg4 {
-    background-image: url('https://source.unsplash.com/random/?sexy,sex');
+    background-image: url('https://source.unsplash.com/random/?sexy,woman');
 }

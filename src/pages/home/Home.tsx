@@ -2,10 +2,8 @@ import { motion } from "framer-motion";
 import React, { useCallback, useState } from "react";
 import Face from "../../components/moving-face/Face";
 import "./Home.css";
-import { useCursor } from "../../contexts/Cursor";
 
 const Home: React.FC = () => {
-  const { handleMouseEnterAnimation } = useCursor();
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = useCallback((event: any) => {
@@ -15,7 +13,6 @@ const Home: React.FC = () => {
   }, []);
 
   const handleMouseEnter = useCallback(() => {
-    handleMouseEnterAnimation();
     document.addEventListener("mousemove", handleMouseMove);
   }, [handleMouseMove]);
   const handleMouseLeave = useCallback(() => {

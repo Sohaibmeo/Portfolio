@@ -1,4 +1,3 @@
-// import AnimatedText from "../animated-text/AnimatedText";
 import SvgAnimation from "../animated-text/SvgAnimation";
 import "./Loading.css";
 import { useEffect, useState } from "react";
@@ -18,14 +17,6 @@ const Loading = () => {
   return (
     <section className={`loading-container ${loaded && "hidden"}`}>
       <SvgAnimation />
-        {/* {loaded ? (
-          // <AnimatedText />
-          <SvgAnimation />
-        ) : loaded === null ? (
-          <p>Loading...</p>
-        ) : (
-          <div className="loader" />
-        )} */}
     </section>
   );
 };

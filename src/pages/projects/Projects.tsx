@@ -1,8 +1,10 @@
-import './Parallex.css'
+import ScrollProgress from '../../components/scroll-progress/ScrollProgress';
+import './Projects.css'
 
-const Parallex = () => {
+const Projects = () => {
   return (
     <section className="parallex-container">
+      <ScrollProgress />
       <div className="bg1" />
       <div className="bg2" />
       <div className="bg3" />
@@ -14,4 +16,4 @@ const Parallex = () => {
   );
 };
 
-export default Parallex;
+export default Projects;
