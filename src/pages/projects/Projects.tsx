@@ -1,16 +1,18 @@
+import ProjectCard from '../../components/card/ProjectCard';
 import ScrollProgress from '../../components/scroll-progress/ScrollProgress';
+import getProjectData from '../../utils/projectData';
 import './Projects.css'
 
 const Projects = () => {
+  const projectsData = getProjectData();
   return (
     <section className="parallex-container">
       <ScrollProgress />
-      <div className="bg1" />
-      <div className="bg2" />
-      <div className="bg3" />
-      <div className="bg4" />
-      <div className="text-layer">
-       <h1>Parallex</h1>
+      <h1>Projects</h1>
+      <div>
+        {projectsData.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
       </div>
     </section>
   );

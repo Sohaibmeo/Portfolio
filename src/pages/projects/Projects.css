@@ -1,47 +1,7 @@
 .parallex-container{
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 400vh;
-}
-
-.bg1, .bg2, .bg3, .bg4{
-    scroll-snap-align: center;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: var(--zindex-media);
-    height: 100vh;
-    width: 100%;
-    top: 0;
-}
-
-.text-layer {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.bg1 {
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
-}
-
-.bg2 {
-    background-image: url('https://source.unsplash.com/random');
-}
-
-.bg3 {
-    background-image: url('https://source.unsplash.com/random/?city,night');
-}
-
-.bg4 {
-    background-image: url('https://source.unsplash.com/random/?sexy,woman');
+    position: relative;
+    height: 100vh;
 }
