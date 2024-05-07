@@ -8,6 +8,7 @@ export interface CursorSettings {
     show: boolean;
     backgroundColorCursor: string;
     backgroundColorBorder: string;
+    borderColor: string;
     cursorPos: {
       x: number;
       y: number;

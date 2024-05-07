@@ -28,8 +28,9 @@ const CursorProvider: React.FC<CursorProviderProps> = ({ children }) => {
     borderSize: 40,
     borderBackgroundSize: 1,
     show: false,
+    borderColor: "white",
     backgroundColorCursor: "black",
-    backgroundColorBorder: "rgba(255,255,255,1)",
+    backgroundColorBorder: "transparent",
     cursorPos: { x: 0, y: 0 },
     outOfBounds: false,
   });
@@ -69,8 +70,8 @@ const CursorProvider: React.FC<CursorProviderProps> = ({ children }) => {
         handleMouseLeaveAnimation,
         setCursorContent: (content: string) =>
           setCursorSettings((prev) => ({ ...prev, content })),
-        setCursorSize: (size: number) =>
-          setCursorSettings((prev) => ({ ...prev, size })),
+        setCursorSize: (cursorSize: number) =>
+          setCursorSettings((prev) => ({ ...prev, cursorSize })),
         setBorderSize: (borderSize: number) =>
           setCursorSettings((prev) => ({ ...prev, borderSize })),
         setBorderBackgroundSize: (size: number) =>

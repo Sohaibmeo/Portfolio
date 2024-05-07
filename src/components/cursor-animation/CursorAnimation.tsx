@@ -10,6 +10,7 @@ const CursorAnimation: React.FC = () => {
     borderSize,
     borderBackgroundSize,
     backgroundColorCursor,
+    borderColor,
     backgroundColorBorder,
   } = useCursor();
 
@@ -32,9 +33,9 @@ const CursorAnimation: React.FC = () => {
         style={{
           width: borderSize,
           height: borderSize,
-          border: `${borderSize ? borderBackgroundSize : 0}px solid ${backgroundColorBorder}`,
+          border: `${borderSize ? borderBackgroundSize : 0}px solid ${borderColor}`,
           transform: `translate(${cursorPos.x - borderSize / 2 - borderBackgroundSize}px, ${cursorPos.y - borderSize / 2 - borderBackgroundSize}px)`,
-          backgroundColor: "transparent",
+          backgroundColor: `${backgroundColorBorder}`,
           display: outOfBounds ? "none" : "flex",
         }}
       />
