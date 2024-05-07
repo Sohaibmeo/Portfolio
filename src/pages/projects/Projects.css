@@ -1,7 +1,35 @@
-.parallex-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100vh;
+.project-container {
+  grid-template-columns: repeat(12, 1fr);
+  display: grid;
+  place-content: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.project-sticky-heading{
+  grid-column: span 1;
+}
+
+.project-section {
+  grid-column: span 11;
+}
+
+#project-heading {
+  --_font-size: calc(1.5rem + 3vw);
+  font-size: var(--_font-size);
+  display: flex;
+  text-transform: capitalize;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 100px;
+  left: 50%;
+}
+
+.project-section-content {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  flex: 1;
 }
