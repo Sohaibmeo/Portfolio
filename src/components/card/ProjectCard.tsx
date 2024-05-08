@@ -7,7 +7,7 @@ const ProjectCard = ({
   title,
   description,
   background,
-  link,
+  // link,
   github,
   techStack,
   tag,
@@ -16,7 +16,7 @@ const ProjectCard = ({
   return (
     <div
       className="project-card"
-      onClick={() => window.open(link, "_blank")}
+      // onClick={() => window.open(link, "_blank")}
       style={{ backgroundImage: `url(${background})` }}
     >
         <div className="project-card-tag">

@@ -26,6 +26,37 @@
   aspect-ratio: 1;
   position: relative;
 }
+/* .face:hover {
+  animation: zoom-in 3s ease-in 0.5s alternate forwards;
+}
+.face > *:not(.eyes-container) {
+  animation: dissappear 1s ease-in-out 0.5s alternate infinite;
+}
+
+@keyframes dissappear {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  35%{
+    transform: scale(14);
+    transform-origin: 60.4% 34.5%;
+  }
+  100% {
+    transform: scale(39);
+    transform-origin: 60.4% 34.5%;
+  }
+} */
 
 .svg {
   width: 0;

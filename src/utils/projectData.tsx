@@ -55,7 +55,7 @@ export default function getProjectData() {
       tag: "Frontend",
       startDate: new Date("Apr 25, 2022"),
       github: "https://github.com/Sohaibmeo/SohaibMao.github.io/tree/dev",
-      background: "https://sohaibmeo.github.io/SohaibMao.github.io/xbanner_img.webp",
+      background: "https://images.unsplash.com/photo-1510070009289-b5bc34383727",
     },
   ];
 }

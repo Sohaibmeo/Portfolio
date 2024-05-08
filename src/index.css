@@ -12,10 +12,14 @@
   --base-size: 5vw;
   --font-large: 5em;
   --font-super-large: 7em;
-  
+
   --hover-link: rgba(198, 194, 194, 0.95);
   --hover-button: rgba(198, 194, 194, 0.95);
-  --light-first: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);;
+  --light-first: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
+  );
   --light-second: #ff6b6b;
   --light-third: #cec5c5;
 
@@ -26,10 +30,10 @@
   --long-transition-time: 4s;
   --slow-transition-time: 7s;
 
-
   --zindex-media: -2;
   --zindex-below-normal: -1;
   --zindex-above-normal: 1;
+  --zindex-high: 2;
   --zindex-navbar: 100;
   --zindex-modal: 200;
   --zindex-modal-content: 300;
@@ -49,7 +53,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   cursor: none;
 }
 
@@ -67,7 +71,8 @@ a:hover {
   word-break: break-word;
 }
 
-body, html {
+body,
+html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   height: 100%;
@@ -118,9 +123,9 @@ button:focus-visible {
   }
 }
 
-.section{
+.section {
   display: flex;
   height: 100vh;
-  scroll-snap-align: center;
   scroll-behavior: smooth;
+  scroll-snap-align: center;
 }

@@ -1,39 +1,27 @@
 .project-container {
-  grid-template-columns: repeat(12, 1fr);
-  display: grid;
-  place-content: center;
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hand-animation-section{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.project-sticky-heading{
-  grid-column: span 1;
+.hand-animation-section svg {
+  position: fixed;
+  width: 55vw;
+  top: 50%;
+  left: 38%;
+  z-index: var(--zindex-high);
 }
 
-.project-counter {
-  font-size: var(--font-super-large);
-}
-
-.project-section {
-  grid-column: span 11;
-}
-
-#project-heading {
-  --_font-size: calc(1.5rem + 3vw);
-  font-size: var(--_font-size);
+.project-heading {
+  /*Todo: Change this to a variable and put that variable into index.css */
+  font-size: calc(1.5rem + 3vw);
+  text-transform: uppercase;
   display: flex;
-  text-transform: capitalize;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 100px;
-  left: 50%;
-}
-
-.project-section-content {
-  display: flex;
-  align-items: center;
-  gap: 5rem;
-  height: 100vh;
 }
