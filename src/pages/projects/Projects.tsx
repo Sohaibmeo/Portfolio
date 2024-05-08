@@ -22,7 +22,7 @@ const Projects = () => {
       <div className="project-section">
         {projectsData.map((project, index) => (
           <div className="project-section-content">
-            <h1>{index + 1}</h1>
+            <h1 className="project-counter">0{index + 1}</h1>
             <ProjectCard key={index} {...project} />
           </div>
         ))}

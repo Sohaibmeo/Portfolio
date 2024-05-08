@@ -1,6 +1,6 @@
 .project-card {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,49 +9,25 @@
   position: relative;
   color: var(--background-color);
   z-index: var(--zindex-above-normal);
-  transition-property: width;
-  overflow: hidden;
-}
-.project-card:hover::before {
-  opacity: 1;
-}
-.project-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(82, 71, 71, 0.5);
-  opacity: 0;
-  z-index: var(--zindex-below-normal);
-  transition-property: opacity;
-  transition-delay: var(--short-transition-time);
+  scroll-snap-align: center;
 }
 
-.counter {
-  font-size: var(--font-large);
+.project-card::after {
+  content: "";
   position: absolute;
-  margin: 0;
-  word-break: break-all;
-}
-.project-card:hover .counter::before {
-  content: "0";
-}
-.project-card:hover > .counter {
-  font-size: var(--font-super-large);
-  top: 0px;
-  right: 0px;
-}
-.project-card > *:not(.counter) {
-  opacity: 0;
-  visibility: hidden;
-}
-.project-card:hover {
-  background-color: lightblue;
-  width: 45%;
-}
-.project-card:hover :is(.project-card-footer,.project-card-tech-stack)  {
+  height: 250px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(82, 71, 71, 0.5);
   opacity: 1;
-  visibility: visible;
-  transform: translate3d(0px, 0px, 0px);
+  z-index: var(--zindex-below-normal);
+}
+
+.project-card-tag {
+  position: absolute;
+  bottom: 100px;
+  right: 25px;
 }
 
 .project-card-footer {
@@ -59,9 +35,6 @@
   bottom: 10px;
   left: 25px;
   text-align: left;
-  transition-property: opacity, transform;
-  transition-delay: calc(var(--short-transition-time)* 2), calc(var(--short-transition-time) * 2);
-  transform: translate3d(-50%, 0px, 0);
 }
 
 .project-start-date,
@@ -81,11 +54,4 @@
   position: absolute;
   bottom: 18px;
   right: 25px;
-  transition-property: opacity;
-  transition-delay: calc(var(--short-transition-time)* 3);
-}
-
-.project-card, .project-card:hover::before, .project-card-footer, .project-card-tech-stack{
-  transition-duration: var(--short-transition-time);
-  transition-timing-function: ease-in-out;
 }

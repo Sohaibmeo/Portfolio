@@ -10,6 +10,10 @@
   grid-column: span 1;
 }
 
+.project-counter {
+  font-size: var(--font-super-large);
+}
+
 .project-section {
   grid-column: span 11;
 }
@@ -31,5 +35,5 @@
   display: flex;
   align-items: center;
   gap: 5rem;
-  flex: 1;
+  height: 100vh;
 }
