@@ -26,11 +26,11 @@ const Home: React.FC = () => {
       viewport={{ amount: 0.5 }}
       className="section home-container"
     >
-      <div className="home-buttons home-contact">Contact Me</div>
+      <div className="home-buttons home-contact"><h3>Contact Me</h3></div>
       <div>
         <Face position={position} />
       </div>
-      <div className="home-buttons home-work">My Work</div>
+      <div className="home-buttons home-work"><h3>My Work</h3></div>
     </motion.section>
   );
 };

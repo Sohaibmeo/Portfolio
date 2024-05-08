@@ -51,7 +51,7 @@
 
 @media (prefers-color-scheme: light) {
   .about-container {
-    background-color: var(--light-third);
+    background-color: var(--background-color);
   }
 }
 

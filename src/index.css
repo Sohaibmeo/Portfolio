@@ -1,7 +1,7 @@
 :root {
-  --background-color: rgba(255, 255, 255, 1);
+  --background-color: floralwhite;
   --background-color-dark: #414446;
-  --white: floralwhite;
+  --white: rgba(255, 255, 255, 1);
   --black: #070707;
 
   --text-overall: #213547;

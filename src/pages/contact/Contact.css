@@ -12,6 +12,6 @@
 
 @media (prefers-color-scheme: light) {
     .contact-container {
-      background-color: var(--light-third);
+      background-color: var(--background-color);
     }
 }
