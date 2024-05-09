@@ -10,8 +10,10 @@
   --text-shadow-light: 0 0 10px rgba(255, 255, 255, 0.5);
 
   --base-size: 5vw;
+  --small-base: 3vw;
   --font-large: 5em;
   --font-super-large: 7em;
+  --dynamic-font-large: calc(1.5rem + var(--small-base));;
 
   --hover-link: rgba(198, 194, 194, 0.95);
   --hover-button: rgba(198, 194, 194, 0.95);
@@ -73,8 +75,8 @@ a:hover {
 
 body,
 html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  /* scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; */
   height: 100%;
   margin: 0;
   padding: 0;

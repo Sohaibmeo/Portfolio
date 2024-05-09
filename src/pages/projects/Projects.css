@@ -1,10 +1,12 @@
 .project-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
 }
 
-.hand-animation-section{
+.hand-animation-section {
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -20,8 +22,8 @@
 }
 
 .project-heading {
-  /*Todo: Change this to a variable and put that variable into index.css */
-  font-size: calc(1.5rem + 3vw);
+  font-size: var(--dynamic-font-large);
   text-transform: uppercase;
   display: flex;
+  position: relative;
 }

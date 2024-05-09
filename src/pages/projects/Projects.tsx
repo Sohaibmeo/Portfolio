@@ -25,25 +25,16 @@ const Projects = () => {
     },
   };
 
-  // const letterVariants = {
-  //   stretched: { y: "100vh" },
-  //   normal: {
-  //     y: 10,
-  //     transition: {
-  //       duration: defaultTransitionTime,
-  //       type: "spring",
-  //     },
-  //   },
-  // };
-
   return (
     <section className="project-container">
       <ScrollProgress />
       <motion.div className="section hand-animation-section">
         <h1 className="project-heading">
           {leftTextCharacters.map((text: string, index: number) => {
-            const distance = Math.abs(leftTextCharacters.length / 2 - index - 1);
-            const divider = distance === 0 ? 1 : (distance / 8 ) + 1;
+            const distance = Math.abs(
+              leftTextCharacters.length / 2 - index - 1,
+            );
+            const divider = distance === 0 ? 1 : distance / 8 + 1;
             const stiffness = 50 / divider;
             return (
               <motion.div
@@ -74,7 +65,7 @@ const Projects = () => {
           </g>
         </motion.svg>
       </motion.div>
-      {projectsData.map((project, index) => (
+      {projectsData.map((project, index: number) => (
         <ProjectCard key={index} {...project} />
       ))}
     </section>
