@@ -13,17 +13,25 @@
   position: relative;
 }
 
-.hand-animation-section svg {
-  position: fixed;
-  width: 55vw;
-  top: 50%;
-  left: 38%;
-  z-index: var(--zindex-high);
-}
-
 .project-heading {
   font-size: var(--dynamic-font-large);
   text-transform: uppercase;
   display: flex;
   position: relative;
+}
+
+.project-card-container{
+  height: 200vh;
+  display: flex;
+  border-top: 5px solid red;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hand-animation-section svg {
+  position: fixed;
+  bottom: 8.4%;
+  left: 38%;
+  z-index: var(--zindex-high);
 }

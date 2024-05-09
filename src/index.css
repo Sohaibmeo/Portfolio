@@ -25,6 +25,8 @@
   --light-second: #ff6b6b;
   --light-third: #cec5c5;
 
+  --hand-movement: 40%;
+
   --short-transition-time: 0.4s;
   --default-quick-transition-time: 0.7s;
   --default-transition-time: 1s;
@@ -120,6 +122,9 @@ button:focus-visible {
 }
 
 @media screen and (max-width: 768px) {
+  :root{
+    --hand-movement: 80%;
+  }
   h1 {
     font-size: 1.5em;
   }
@@ -129,5 +134,5 @@ button:focus-visible {
   display: flex;
   height: 100vh;
   scroll-behavior: smooth;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
 }

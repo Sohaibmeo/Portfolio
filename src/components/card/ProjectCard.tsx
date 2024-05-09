@@ -1,24 +1,32 @@
+import React from "react";
 import { getSingleProjectData } from "../../utils/getSkillData";
 import { ProjectCardProps } from "../../utils/types/project";
 import Git from "../../assets/code-icons/git.svg";
 import "./ProjectCard.css";
+import { motion } from "framer-motion";
 
-const ProjectCard = ({
-  title,
-  description,
-  background,
-  // link,
-  github,
-  techStack,
-  tag,
-  startDate,
-}: ProjectCardProps) => {
-  return (
-    <div
-      className="project-card"
-      // onClick={() => window.open(link, "_blank")}
-      style={{ backgroundImage: `url(${background})` }}
-    >
+const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
+  (
+    {
+      title,
+      description,
+      background,
+      // link,
+      github,
+      techStack,
+      tag,
+      startDate,
+      style,
+    },
+    ref,
+  ) => {
+    return (
+      <motion.div
+        className="project-card"
+        ref={ref}
+        // onClick={() => window.open(link, "_blank")}
+        style={{ backgroundImage: `url(${background})`, ...style }}
+      >
         <div className="project-card-tag">
           <p>{tag}</p>
         </div>
@@ -55,8 +63,9 @@ const ProjectCard = ({
             );
           })}
         </div>
-    </div>
-  );
-};
+      </motion.div>
+    );
+  },
+);
 
 export default ProjectCard;

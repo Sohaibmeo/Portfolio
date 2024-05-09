@@ -1,3 +1,5 @@
+import { MotionStyle } from "framer-motion";
+
 export interface ProjectCardProps {
     startDate: Date;
     title: string;
@@ -7,4 +9,5 @@ export interface ProjectCardProps {
     link: string;
     github: string;
     background: string;
+    style?: MotionStyle;
   };
