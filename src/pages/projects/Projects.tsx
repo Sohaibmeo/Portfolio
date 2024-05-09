@@ -1,5 +1,4 @@
 import ProjectCard from "../../components/card/ProjectCard";
-// import ScrollProgress from "../../components/scroll-progress/ScrollProgress";
 import { getHandSvgPathData } from "../../utils/data/handSvgPathData";
 import getProjectData from "../../utils/projectData";
 
@@ -13,37 +12,30 @@ const Projects = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(
     scrollYProgress,
-    [
-      0, 0.0714, 0.1428, 0.2142, 0.2856, 0.357, 0.4284, 0.4998, 0.5712, 0.6426,
-      0.714, 0.7854, 0.8568, 0.9282, 1,
-    ],
+    [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
     [
       "-43vh",
       "16vh",
-      "-43vh",
-      "-43vh",
+      "-52vh",
       "16vh",
-      "-43vh",
-      "-43vh",
+      "-52vh",
       "16vh",
-      "-43vh",
-      "-43vh",
+      "-52vh",
       "16vh",
-      "-43vh",
-      "-43vh",
+      "-52vh",
       "16vh",
-      "-43vh",
+      "-52vh",
     ],
   );
 
   const textMove = useTransform(
     scrollYProgress,
-    [0, 0.0714, 1],
-    ["0vh", "130vh", "130vh"],
+    [0, 0.1, 1],
+    ["0vh", "160vh", "160vh"],
   );
   const textShow = useTransform(
     scrollYProgress,
-    [0, 0.0714, 0.075, 1],
+    [0, 0.1, 0.11, 1],
     [1, 1, 0, 0],
   );
   const leftText: string = "projects";
@@ -51,7 +43,7 @@ const Projects = () => {
   const defaultTransitionTime = 1;
 
   const svgHandVariants = {
-    hidden: { y: '100vh', opacity: 0 },
+    hidden: { y: "100vh", opacity: 0 },
     visible: {
       y: "-43vh",
       opacity: 1,
@@ -65,8 +57,7 @@ const Projects = () => {
 
   return (
     <section className="project-container">
-      {/* <ScrollProgress /> */}
-      <motion.div className="section hand-animation-section">
+      <motion.div className="hand-animation-section">
         <motion.h1
           className="project-heading"
           initial={{ y: "0vh", opacity: 1 }}
@@ -90,7 +81,6 @@ const Projects = () => {
                     stiffness,
                   },
                 }}
-                // style={{ y: textMove }}
               >
                 {text}
               </motion.div>
@@ -114,13 +104,18 @@ const Projects = () => {
         const ref = useRef(null);
         const { scrollYProgress } = useScroll({
           target: ref,
-          offset: ["start end", "end end"],
+          offset: ["center end", "end start"],
         });
 
         const y = useTransform(
           scrollYProgress,
           [0, 0.5, 1],
-          ["0%", "200%", "0%"],
+          ["60%", "115%", "400%"],
+        );
+        const opacity = useTransform(
+          scrollYProgress,
+          [0, 0.5, 0.99, 1],
+          [1, 1, 1, 0],
         );
         return (
           <div key={index} className="project-card-container" ref={ref}>
@@ -129,6 +124,7 @@ const Projects = () => {
               {...project}
               style={{
                 y,
+                opacity,
               }}
             />
           </div>

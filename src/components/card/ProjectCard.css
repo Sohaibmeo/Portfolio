@@ -1,5 +1,5 @@
 .project-card {
-  width: 600px;
+  width: 28vw;
   aspect-ratio: 1/1;
   border: 1px solid green;
   display: flex;
@@ -11,7 +11,6 @@
   position: relative;
   color: var(--background-color);
   z-index: var(--zindex-above-normal);
-  scroll-snap-align: end;
 }
 
 .project-card::after {

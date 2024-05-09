@@ -77,8 +77,6 @@ a:hover {
 
 body,
 html {
-  /* scroll-snap-type: y mandatory;
-  scroll-behavior: smooth; */
   height: 100%;
   margin: 0;
   padding: 0;
@@ -133,6 +131,4 @@ button:focus-visible {
 .section {
   display: flex;
   height: 100vh;
-  scroll-behavior: smooth;
-  /* scroll-snap-align: center; */
 }

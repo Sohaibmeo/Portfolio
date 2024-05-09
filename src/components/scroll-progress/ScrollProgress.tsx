@@ -1,8 +1,9 @@
-import { motion, useScroll, useSpring } from "framer-motion";
+import { MotionValue, motion, useSpring } from "framer-motion";
 import './ScrollProgress.css'
 
-const ScrollProgress = () => {
-  const { scrollYProgress } = useScroll();
+const ScrollProgress = ({scrollYProgress}:{
+  scrollYProgress: MotionValue<number>
+}) => {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
