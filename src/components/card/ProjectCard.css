@@ -9,10 +9,15 @@
   align-items: center;
   position: absolute;
   top: 35%;
+  color: var(--background-color);
+}
+
+.project-background-img {
+  position: absolute;
+  inset: 0;
   background-position: center;
   background-size: cover;
-  color: var(--background-color);
-  z-index: var(--zindex-above-normal);
+  z-index: var(--zindex-media);
 }
 
 .project-card-tag {
@@ -35,6 +40,11 @@
 .project-card-description {
   margin: 10px 0 0 5px;
   width: 50%;
+}
+
+.project-card-links {
+  display: flex;
+  gap: 30px;
 }
 
 .project-link {

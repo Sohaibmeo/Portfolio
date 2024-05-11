@@ -13,7 +13,7 @@
   --small-base: 3vw;
   --font-base: 3vw;
   --dynamic-font-large: calc(1.5rem + var(--small-base));
-  --dynamic-font-medium: calc(0.2rem + var(--font-base));
+  --dynamic-font-medium: calc(0.5 * var(--font-base) + 0.5em);
   --dynamic-font-small: calc(0.22 * var(--font-base) + 0.3em);
 
   --hover-link: rgba(198, 194, 194, 0.95);
