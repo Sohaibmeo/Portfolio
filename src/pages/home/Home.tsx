@@ -1,10 +1,15 @@
-import { motion } from "framer-motion";
-import React, { useCallback, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import React, { useCallback, useRef, useState } from "react";
 import Face from "../../components/moving-face/Face";
 import "./Home.css";
 
 const Home: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"],
+  });
 
   const handleMouseMove = useCallback((event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
@@ -20,18 +25,28 @@ const Home: React.FC = () => {
   }, [handleMouseMove]);
 
   return (
-    <motion.section
+    <motion.div
+      className="home-container"
       onViewportEnter={handleMouseEnter}
       onViewportLeave={handleMouseLeave}
       viewport={{ amount: 0.5 }}
-      className="section home-container"
     >
-      <div className="home-buttons home-contact"><h3>Contact Me</h3></div>
-      <div>
-        <Face position={position} />
+      <div className="section home-face-container">
+        <Face position={position} scrollYProgress={scrollYProgress} />
       </div>
-      <div className="home-buttons home-work"><h3>My Work</h3></div>
-    </motion.section>
+      <motion.section className="section hero-container">
+        <div className="home-buttons home-contact">
+          <h3>Contact Me</h3>
+        </div>
+        <div className="home-buttons home-work">
+          <h3>My Work</h3>
+        </div>
+      </motion.section>
+      <motion.section
+        className="section about-container"
+        ref={ref}
+      ></motion.section>
+    </motion.div>
   );
 };
 

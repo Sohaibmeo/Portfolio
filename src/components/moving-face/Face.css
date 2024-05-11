@@ -21,46 +21,25 @@
   --imagesize-beard: calc(var(--imagesize-hair) * 2);
   --imagesize-eyes: calc(var(--base-size) * 2.94);
   --imagesize-eye: calc(var(--imagesize-eyes) / 3.5);
-  overflow: hidden;
+  --imagesize-brain: calc(var(--base-size) * 4.4);
   width: var(--imagesize-beard);
   aspect-ratio: 1;
   position: relative;
 }
-/* .face:hover {
-  animation: zoom-in 3s ease-in 0.5s alternate forwards;
-}
-.face > *:not(.eyes-container) {
-  animation: dissappear 1s ease-in-out 0.5s alternate infinite;
-}
-
-@keyframes dissappear {
-  0% {
-    visibility: visible;
-    opacity: 1;
-  }
-  100% {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-
-@keyframes zoom-in {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  35%{
-    transform: scale(14);
-    transform-origin: 60.4% 34.5%;
-  }
-  100% {
-    transform: scale(39);
-    transform-origin: 60.4% 34.5%;
-  }
-} */
 
 .svg {
   width: 0;
   height: 0;
+}
+
+.brain-svg{
+  width: var(--imagesize-brain);
+  aspect-ratio: 1;
+  
+}
+
+.beard-svg, .brain-svg {
+  fill: var(--background-color);
 }
 
 .face > * {
@@ -72,7 +51,6 @@
 .left-eye,
 .right-eye,
 .eyes,
-.beard,
 .hair,
 .left-eyeball-shine,
 .right-eyeball-shine {
@@ -87,13 +65,10 @@
   clip-path: url(#hair-clip);
 }
 
-.beard {
+.beard-svg {
   top: calc(var(--base-size) * 2.91);
   width: var(--imagesize-beard);
   height: calc(var(--imagesize-beard) * 0.601);
-  transform: scaleX(-1);
-  left: 0%;
-  clip-path: url(#beard-clip);
 }
 
 .eyes {
@@ -169,21 +144,36 @@
   .face {
     --base-size: 8vw;
   }
+  .left-eyeball-shine::before,
+  .right-eyeball-shine::before {
+    border-width: 9px;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
   .face {
     --base-size: 10vw;
   }
+  .left-eyeball-shine::before,
+  .right-eyeball-shine::before {
+    border-width: 8px;
+  }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   .face {
-    --base-size: 12vw;
+    --base-size: 10vw;
   }
   .left-eyeball-shine::before,
   .right-eyeball-shine::before {
-    border: 5px double var(--background-color);
+    border-width: 7px;
+  }
+}
+
+@media (max-width: 400px) {
+  .left-eyeball-shine::before,
+  .right-eyeball-shine::before {
+    border-width: 5px;
   }
 }
 
@@ -200,6 +190,9 @@
 
   .left-eyeball-shine::before,
   .right-eyeball-shine::before {
-    border: 10px double var(--background-color);
+    border-color: var(--background-color);
+  }
+  .brain-svg, .beard-svg{
+    fill: var(--background-color-dark);
   }
 }
