@@ -110,7 +110,7 @@ const Projects = () => {
         const y = useTransform(
           scrollYProgress,
           [0, 0.5, 1],
-          ["60%", "115%", "400%"],
+          ["36vh", "68vh", "235vh"],
         );
         const opacity = useTransform(
           scrollYProgress,

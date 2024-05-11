@@ -1,5 +1,6 @@
 .project-card {
   width: 28vw;
+  min-width: 320px;
   aspect-ratio: 1/1;
   border: 1px solid green;
   display: flex;
@@ -8,7 +9,8 @@
   align-items: center;
   background-position: center;
   background-size: cover;
-  position: relative;
+  position: absolute;
+  top: 35%;
   color: var(--background-color);
   z-index: var(--zindex-above-normal);
 }
