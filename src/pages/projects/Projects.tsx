@@ -100,33 +100,14 @@ const Projects = () => {
         </motion.svg>
       </motion.div>
       {projectsData.map((project, index: number) => {
-        const cardRef = useRef(null);
         const ref = useRef(null);
         const { scrollYProgress } = useScroll({
           target: ref,
           offset: ["center end", "end start"],
         });
-
-        const y = useTransform(
-          scrollYProgress,
-          [0, 0.5, 1],
-          ["36vh", "68vh", "235vh"],
-        );
-        const opacity = useTransform(
-          scrollYProgress,
-          [0, 0.5, 0.99, 1],
-          [1, 1, 1, 0],
-        );
         return (
           <div key={index} className="project-card-container" ref={ref}>
-            <ProjectCard
-              ref={cardRef}
-              {...project}
-              style={{
-                y,
-                opacity,
-              }}
-            />
+            <ProjectCard scrollYProgress={scrollYProgress} {...project} />
           </div>
         );
       })}

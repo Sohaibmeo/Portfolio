@@ -1,4 +1,4 @@
-import { MotionStyle } from "framer-motion";
+import { MotionValue } from "framer-motion";
 
 export interface ProjectCardProps {
     startDate: Date;
@@ -9,5 +9,5 @@ export interface ProjectCardProps {
     link: string;
     github: string;
     background: string;
-    style?: MotionStyle;
+    scrollYProgress: MotionValue<number>;
   };

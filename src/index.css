@@ -11,9 +11,10 @@
 
   --base-size: 5vw;
   --small-base: 3vw;
-  --font-large: 5em;
-  --font-super-large: 7em;
-  --dynamic-font-large: calc(1.5rem + var(--small-base));;
+  --font-base: 3vw;
+  --dynamic-font-large: calc(1.5rem + var(--small-base));
+  --dynamic-font-medium: calc(0.2rem + var(--font-base));
+  --dynamic-font-small: calc(0.22 * var(--font-base) + 0.3em);
 
   --hover-link: rgba(198, 194, 194, 0.95);
   --hover-button: rgba(198, 194, 194, 0.95);
@@ -82,8 +83,19 @@ html {
   padding: 0;
 }
 
+p{
+  font-size: var(--dynamic-font-small);
+  font-weight: 400;
+}
+
 h1 {
   font-size: 3.2em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--dynamic-font-medium);
   line-height: 1.1;
   margin: 0;
 }
