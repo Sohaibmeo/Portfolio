@@ -21,7 +21,7 @@
   --imagesize-beard: calc(var(--imagesize-hair) * 2);
   --imagesize-eyes: calc(var(--base-size) * 2.94);
   --imagesize-eye: calc(var(--imagesize-eyes) / 3.5);
-  --imagesize-brain: calc(var(--base-size) * 4.4);
+  --imagesize-brain: calc(var(--base-size) * 3.3);
   width: var(--imagesize-beard);
   aspect-ratio: 1;
   position: relative;
@@ -35,7 +35,8 @@
 .brain-svg{
   width: var(--imagesize-brain);
   aspect-ratio: 1;
-  
+  background-color: var(--background-color-dark);
+  z-index: var(--zindex-above-normal);
 }
 
 .beard-svg, .brain-svg {
@@ -194,5 +195,8 @@
   }
   .brain-svg, .beard-svg{
     fill: var(--background-color-dark);
+  }
+  .brain-svg{
+    background-color: var(--background-color);
   }
 }

@@ -1,4 +1,4 @@
-.about-container {
+/* .about-container {
   justify-content: center;
   align-items: center;
   text-align: start;
@@ -6,7 +6,7 @@
   overflow: hidden;
   background-color: var(--background-color-dark);
   flex-wrap: wrap-reverse;
-}
+} */
 .about-content {
   width: 40%;
   min-width: 25%;
@@ -50,9 +50,9 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .about-container {
+  /* .about-container {
     background-color: var(--background-color);
-  }
+  } */
 }
 
 @media screen and (max-width: 768px){

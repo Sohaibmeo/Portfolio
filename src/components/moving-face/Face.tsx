@@ -46,7 +46,7 @@ const Face = ({
       </svg>
       <motion.svg
         className="brain-svg"
-        viewBox="0 0 992 912"
+        viewBox="136.468 80.554 752.233 597.365"
         initial={{ x: "-50%", y: "-15%", scale: 1 }}
         animate={{
           scale: 1.05,
