@@ -6,10 +6,10 @@ import Contact from "./pages/contact/Contact";
 import CursorAnimation from "./components/cursor-animation/CursorAnimation";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./pages/projects/Projects";
-import useLenis from "./utils/helper/lenisScroll";
+// import useLenis from "./utils/helper/lenisScroll";
 
 function App() {
-  useLenis();
+  // useLenis();
 
   return (
     <>

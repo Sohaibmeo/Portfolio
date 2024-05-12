@@ -37,32 +37,3 @@
 .about-container {
   position: relative;
 }
-
-.blood-pipes-left,
-.blood-pipes-right {
-  position: fixed;
-  fill: none;
-  height: auto;
-  stroke: var(--background-color-dark);
-  z-index: var(--zindex-below-normal);
-  stroke-width: 10px;
-}
-
-.blood-pipes-left {
-  right: 58%;
-}
-
-.blood-pipes-right {
-  left: 58%;
-  transform: scaleX(-1);
-}
-
-.pipe-1 {
-  top: 14%;
-  width: 350px;
-}
-
-.pipe-2 {
-  top: 21%;
-  width: 350px;
-}

@@ -22,6 +22,7 @@
   --imagesize-eyes: calc(var(--base-size) * 2.94);
   --imagesize-eye: calc(var(--imagesize-eyes) / 3.5);
   --imagesize-brain: calc(var(--base-size) * 3.3);
+  --imagesize-pipe: calc(var(--base-size) * 4.5);
   width: var(--imagesize-beard);
   aspect-ratio: 1;
   position: relative;
@@ -32,14 +33,43 @@
   height: 0;
 }
 
-.brain-svg{
+.brain-svg {
   width: var(--imagesize-brain);
   aspect-ratio: 1;
   background-color: var(--background-color-dark);
   z-index: var(--zindex-above-normal);
 }
 
-.beard-svg, .brain-svg {
+.blood-pipe {
+  fill: none;
+  height: auto;
+  stroke: var(--background-color-dark);
+  z-index: var(--zindex-below-normal);
+  stroke-width: 10px;
+  width: var(--imagesize-pipe);
+}
+
+.pipes-container-left,
+.pipes-container-right {
+  display: flex;
+  gap: calc(var(--imagesize-brain) * 0.99);
+}
+
+.pipes-container-left {
+  left: calc(var(--imagesize-brain) * 0.5);
+  top: calc(var(--imagesize-brain) * 0.32);
+}
+.pipes-container-right {
+  left: calc(var(--imagesize-brain) * 0.5);
+  top: calc(var(--imagesize-brain) * 0.5);
+}
+
+.pipe-right {
+  transform: scaleX(-1);
+}
+
+.beard-svg,
+.brain-svg {
   fill: var(--background-color);
 }
 
@@ -143,7 +173,7 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .face {
-    --base-size: 8vw;
+    --base-size: 6vw;
   }
   .left-eyeball-shine::before,
   .right-eyeball-shine::before {
@@ -193,10 +223,11 @@
   .right-eyeball-shine::before {
     border-color: var(--background-color);
   }
-  .brain-svg, .beard-svg{
+  .brain-svg,
+  .beard-svg {
     fill: var(--background-color-dark);
   }
-  .brain-svg{
+  .brain-svg {
     background-color: var(--background-color);
   }
 }

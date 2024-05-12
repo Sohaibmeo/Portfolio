@@ -1,8 +1,7 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import React, { useCallback, useRef, useState } from "react";
 import Face from "../../components/moving-face/Face";
 import "./Home.css";
-import { getPipe1Path, getPipe2Path } from "../../utils/data/getPipePath";
 
 const Home: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -11,8 +10,6 @@ const Home: React.FC = () => {
     target: ref,
     offset: ["start end", "start start"],
   });
-
-  const strokeDashoffset = useTransform(scrollYProgress, [0,0.5, 1], [-700,-700, 0]);
 
   const handleMouseMove = useCallback((event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
@@ -46,38 +43,7 @@ const Home: React.FC = () => {
         </div>
       </motion.section>
       <motion.section className="section about-container" ref={ref}>
-        <motion.svg
-          viewBox="83.486 233.806 332.864 206.963"
-          className="blood-pipes-left pipe-1"
-          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
-          style={{ strokeDashoffset }}
-        >
-          <motion.path d={getPipe1Path()} />
-        </motion.svg>
-        <motion.svg
-          viewBox="83.486 230.87 315.864 460.299"
-          className="blood-pipes-left pipe-2"
-          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
-          style={{ strokeDashoffset }}
-        >
-          <motion.path d={getPipe2Path()} />
-        </motion.svg>
-        <motion.svg
-          viewBox="83.486 233.806 332.864 206.963"
-          className="blood-pipes-right pipe-1"
-          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
-          style={{ strokeDashoffset }}
-        >
-          <motion.path d={getPipe1Path()} />
-        </motion.svg>
-        <motion.svg
-          viewBox="83.486 230.87 315.864 460.299"
-          className="blood-pipes-right pipe-2"
-          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
-          style={{ strokeDashoffset }}
-        >
-          <motion.path d={getPipe2Path()} />
-        </motion.svg>
+        
       </motion.section>
     </motion.div>
   );

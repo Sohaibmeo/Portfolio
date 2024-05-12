@@ -3,6 +3,7 @@ import { getEyeClipPath, getHairClipPath } from "../../utils/getFaceData";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { getSvgBeardPath } from "../../utils/data/getSvgBeardPath";
 import { getBrainClipPath } from "../../utils/data/getSvgBrainPath";
+import { getPipe1Path, getPipe2Path } from "../../utils/data/getPipePath";
 
 const Face = ({
   position,
@@ -16,11 +17,18 @@ const Face = ({
     [0, 0.5, 1],
     ["0%", "-100%", "-100%"],
   );
+  const strokeDashoffset = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [-700, -700, 0],
+  );
   const moveDown = useTransform(scrollYProgress, [0, 0.5, 1], [0, 25, 25]);
-  const appear = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
+  const fadeIn = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
+  const fadeOut = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.6]);
 
   return (
-    <div className="face">
+    <motion.div className="face" initial={{ scale: 0 }} style={{ scale }}>
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
           <path d={getHairClipPath()}></path>
@@ -56,15 +64,50 @@ const Face = ({
             duration: 1,
           },
         }}
-        style={{ opacity: appear }}
+        style={{ opacity: fadeIn }}
       >
         <path d={getBrainClipPath()}></path>
       </motion.svg>
-
+      <div className="pipes-container-left">
+        <motion.svg
+          viewBox="83.486 233.806 332.864 206.963"
+          className="blood-pipe pipe-1"
+          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
+          style={{ strokeDashoffset }}
+        >
+          <motion.path d={getPipe1Path()} />
+        </motion.svg>
+        <motion.svg
+          viewBox="83.486 233.806 332.864 206.963"
+          className="blood-pipe pipe-1 pipe-right"
+          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
+          style={{ strokeDashoffset }}
+        >
+          <motion.path d={getPipe1Path()} />
+        </motion.svg>
+      </div>
+      <div className="pipes-container-right">
+        <motion.svg
+          viewBox="83.486 230.87 315.864 460.299"
+          className="blood-pipe pipe-2 "
+          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
+          style={{ strokeDashoffset }}
+        >
+          <motion.path d={getPipe2Path()} />
+        </motion.svg>
+        <motion.svg
+          viewBox="83.486 230.87 315.864 460.299"
+          className="blood-pipe pipe-2 pipe-right"
+          initial={{ strokeDashoffset: -700, strokeDasharray: 700 }}
+          style={{ strokeDashoffset }}
+        >
+          <motion.path d={getPipe2Path()} />
+        </motion.svg>
+      </div>
       <motion.div
         className="hair"
-        initial={{ y: 0, x: "-49%" }}
-        style={{ y: moveUp }}
+        initial={{ y: 0, x: "-49%", opacity: 1 }}
+        style={{ y: moveUp, opacity: fadeOut }}
       />
       <motion.div
         className="eyes"
@@ -93,7 +136,7 @@ const Face = ({
           ></div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
