@@ -6,6 +6,7 @@ import { getBrainClipPath } from "../../utils/data/getSvgBrainPath";
 import Eyes from "../moving-eyes/Eyes";
 import Pipes from "../pipes/Pipes";
 import BloodContainers from "../blood-containers/BloodContainers";
+import useMediaQuery from "../../utils/helper/media/useMediaQuery";
 
 const Face = ({
   position,
@@ -19,10 +20,16 @@ const Face = ({
     [0, 0.5, 1],
     ["0%", "-100%", "-100%"],
   );
+  const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
+  console.log(isSmall)
   const moveDown = useTransform(scrollYProgress, [0, 0.5, 1], [0, 25, 25]);
   const fadeIn = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
   const fadeOut = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [1, 1, 0, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.6]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [1, isSmall ? 1 : 0.6, isSmall ? 1 : 0.6],
+  );
 
   return (
     <motion.div className="face" initial={{ scale: 0 }} style={{ scale }}>
@@ -67,7 +74,7 @@ const Face = ({
       </motion.svg>
 
       <Pipes scrollYProgress={scrollYProgress} />
-      <BloodContainers scrollYProgress={scrollYProgress} />
+      <BloodContainers scrollYProgress={scrollYProgress} isSmall/>
 
       <motion.div
         className="hair"

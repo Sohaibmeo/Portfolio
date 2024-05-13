@@ -5,8 +5,10 @@ import "./BloodContainers.css";
 
 const BloodContainers = ({
   scrollYProgress,
+  isSmall,
 }: {
   scrollYProgress: MotionValue<number>;
+  isSmall: boolean;
 }) => {
   const opacity = useTransform(
     scrollYProgress,
@@ -17,13 +19,17 @@ const BloodContainers = ({
   return (
     <React.Fragment>
       <motion.div
-        className="top-boxes"
+        className="top-boxes blood-container"
         initial={{ opacity: 0 }}
         style={{ opacity }}
       >
         <div className="leftBox">
           <h2>About Me</h2>
-          <motion.p initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
+          <motion.p
+            className="about-text"
+            initial={{ opacity: 0 }}
+            style={{ opacity: textOpacity }}
+          >
             Resourceful Software Engineer with in-depth knowledge of Front End
             Web Development. Experience handling complex HTML and CSS coding,
             Javascript And ReactJS design and extensions to meet organization's
@@ -35,7 +41,11 @@ const BloodContainers = ({
         </div>
         <div className="rightBox">
           <h2>Experience</h2>
-          <motion.p initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
+          <motion.p
+            className="about-text"
+            initial={{ opacity: 0 }}
+            style={{ opacity: textOpacity }}
+          >
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
             nemo consequuntur alias sed magnam repudiandae aliquid, quae
             deserunt qui sequi consectetur culpa dolores vero itaque provident.
@@ -51,19 +61,23 @@ const BloodContainers = ({
         </div>
       </motion.div>
       <motion.div
-        className="bottom-boxes"
+        className="bottom-boxes blood-container"
         initial={{ opacity: 0 }}
         style={{ opacity }}
       >
         <div className="leftBox">
           <h2>Skills</h2>
           <motion.ul initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
-            {<Skills width="40px" />}
+            {<Skills width={isSmall ? "20px": "40px"} />}
           </motion.ul>
         </div>
         <div className="rightBox">
           <h2>Education</h2>
-          <motion.p initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
+          <motion.p
+            className="about-text"
+            initial={{ opacity: 0 }}
+            style={{ opacity: textOpacity }}
+          >
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
             nemo consequuntur alias sed magnam repudiandae aliquid, quae
             deserunt qui sequi consectetur culpa dolores vero itaque provident.

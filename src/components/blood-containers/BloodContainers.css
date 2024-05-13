@@ -1,10 +1,16 @@
 .top-boxes {
-  position: absolute;
   top: 0;
 }
 .bottom-boxes {
-  position: absolute;
-  top: 420px;
+  top: calc(var(--base-size) * 5);
+}
+
+.about-text{
+  /* font-size: 1rem; */
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 .top-boxes,
@@ -17,7 +23,48 @@
 
 .leftBox,
 .rightBox {
-  width: 500px;
-  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: calc(var(--base-size) * 10);
+  height: calc(var(--base-size) * 4);
   border: 5px solid black;
+  border-radius: 15px;
+}
+
+@media (max-width: 1280px) {
+  .leftBox,
+  .rightBox {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .leftBox,
+  .rightBox {
+    width: 340px;
+    height: 320px;
+  }
+  .bottom-boxes {
+    top: 340px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-boxes,
+  .bottom-boxes {
+    position: relative;
+    gap: 8px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .leftBox,
+  .rightBox {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-width: 3px;
+  }
 }

@@ -81,6 +81,27 @@
   clip-path: url(#eye-clip);
 }
 
+@media screen and (max-width: 768px) {
+  .face{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 8px;
+  }
+  .face > *{
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+  .face > *:not(.blood-container) {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   .left-eye,
   .right-eye,

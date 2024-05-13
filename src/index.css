@@ -170,12 +170,6 @@ button:focus-visible {
   }
 }
 
-@media (max-width: 576px) {
-  :root {
-    --base-size: 10vw;
-  }
-}
-
 .section {
   display: flex;
   height: 100vh;
