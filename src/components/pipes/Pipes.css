@@ -1,0 +1,25 @@
+.blood-pipe {
+  fill: none;
+  height: auto;
+  stroke: var(--background-color-dark);
+  z-index: var(--zindex-below-normal);
+  stroke-width: 10px;
+  width: var(--imagesize-pipe);
+}
+
+.pipes-container-left,
+.pipes-container-right {
+  display: flex;
+  gap: calc(var(--imagesize-brain) * 0.99);
+}
+
+.pipes-container-left {
+  top: calc(var(--imagesize-brain) * 0.32);
+}
+.pipes-container-right {
+  top: calc(var(--imagesize-brain) * 0.5);
+}
+
+.pipe-right {
+  transform: scaleX(-1);
+}

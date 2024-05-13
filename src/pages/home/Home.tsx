@@ -42,9 +42,7 @@ const Home: React.FC = () => {
           <h3>My Work</h3>
         </div>
       </motion.section>
-      <motion.section className="section about-container" ref={ref}>
-        
-      </motion.section>
+      <section className="section about-container" ref={ref} />
     </motion.div>
   );
 };

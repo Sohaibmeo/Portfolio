@@ -140,6 +140,42 @@ button:focus-visible {
   }
 }
 
+@media (min-width: 2000px) {
+  :root {
+    --base-size: 4vw;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1999px) {
+  :root {
+    --base-size: 5vw;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  :root {
+    --base-size: 6vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  :root {
+    --base-size: 6vw;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  :root {
+    --base-size: 10vw;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --base-size: 10vw;
+  }
+}
+
 .section {
   display: flex;
   height: 100vh;

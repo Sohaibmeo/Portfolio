@@ -1,6 +1,7 @@
 .home-container {
   height: 100%;
   flex-direction: column;
+  position: relative;
 }
 
 .home-face-container {
