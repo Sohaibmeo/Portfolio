@@ -33,8 +33,10 @@
   width: auto;
   height: auto;
   margin: auto;
+  border: 10px solid var(--text-color);
 }
 
 .about-container {
   position: relative;
+  height: 150vh;
 }

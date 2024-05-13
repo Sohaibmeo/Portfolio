@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start start"],
+    offset: ["start end", "end end"],
   });
 
   const handleMouseMove = useCallback((event: any) => {
@@ -42,7 +42,8 @@ const Home: React.FC = () => {
           <h3>My Work</h3>
         </div>
       </motion.section>
-      <section className="section about-container" ref={ref} />
+      <section className="about-container" ref={ref} />
+      <br id="about" />
     </motion.div>
   );
 };

@@ -1,41 +1,29 @@
-// import { MotionValue } from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import Skills from "../skills/Skill";
 import React from "react";
 import "./BloodContainers.css";
 
 const BloodContainers = ({
-//   scrollYProgress,
+  scrollYProgress,
 }: {
-//   scrollYProgress?: MotionValue<number>;
+  scrollYProgress: MotionValue<number>;
 }) => {
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.55, 0.7, 1],
+    [0, 0, 1, 1],
+  );
+  const textOpacity = useTransform(scrollYProgress, [0, 0.85, 1], [0, 0, 1]);
   return (
     <React.Fragment>
-      <div className="top-boxes">
-        <div className="leftBox">
-          <h2>Skills</h2>
-          <ul>{<Skills width="40px" />}</ul>
-        </div>
-        <div className="rightBox">
-          <h2>Experience</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            nemo consequuntur alias sed magnam repudiandae aliquid, quae
-            deserunt qui sequi consectetur culpa dolores vero itaque provident.
-            Neque eligendi commodi voluptatibus? Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Dolorem nemo consequuntur alias sed
-            magnam repudiandae aliquid, quae deserunt qui sequi consectetur
-            culpa dolores vero itaque provident. Neque eligendi commodi
-            voluptatibus? Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Dolorem nemo consequuntur alias sed magnam repudiandae
-            aliquid, quae deserunt qui sequi consectetur culpa dolores vero
-            itaque provident. Neque eligendi commodi voluptatibus?
-          </p>
-        </div>
-      </div>
-      <div className="bottom-boxes">
+      <motion.div
+        className="top-boxes"
+        initial={{ opacity: 0 }}
+        style={{ opacity }}
+      >
         <div className="leftBox">
           <h2>About Me</h2>
-          <p>
+          <motion.p initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
             Resourceful Software Engineer with in-depth knowledge of Front End
             Web Development. Experience handling complex HTML and CSS coding,
             Javascript And ReactJS design and extensions to meet organization's
@@ -43,11 +31,11 @@ const BloodContainers = ({
             others to define project expectations and demand. Hands-on testing
             and debugging to address inconsistencies and maintain performance
             thresholds.
-          </p>
+          </motion.p>
         </div>
         <div className="rightBox">
-          <h2>Education</h2>
-          <p>
+          <h2>Experience</h2>
+          <motion.p initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
             nemo consequuntur alias sed magnam repudiandae aliquid, quae
             deserunt qui sequi consectetur culpa dolores vero itaque provident.
@@ -59,9 +47,37 @@ const BloodContainers = ({
             elit. Dolorem nemo consequuntur alias sed magnam repudiandae
             aliquid, quae deserunt qui sequi consectetur culpa dolores vero
             itaque provident. Neque eligendi commodi voluptatibus?
-          </p>
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
+      <motion.div
+        className="bottom-boxes"
+        initial={{ opacity: 0 }}
+        style={{ opacity }}
+      >
+        <div className="leftBox">
+          <h2>Skills</h2>
+          <motion.ul initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
+            {<Skills width="40px" />}
+          </motion.ul>
+        </div>
+        <div className="rightBox">
+          <h2>Education</h2>
+          <motion.p initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+            nemo consequuntur alias sed magnam repudiandae aliquid, quae
+            deserunt qui sequi consectetur culpa dolores vero itaque provident.
+            Neque eligendi commodi voluptatibus? Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Dolorem nemo consequuntur alias sed
+            magnam repudiandae aliquid, quae deserunt qui sequi consectetur
+            culpa dolores vero itaque provident. Neque eligendi commodi
+            voluptatibus? Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. Dolorem nemo consequuntur alias sed magnam repudiandae
+            aliquid, quae deserunt qui sequi consectetur culpa dolores vero
+            itaque provident. Neque eligendi commodi voluptatibus?
+          </motion.p>
+        </div>
+      </motion.div>
     </React.Fragment>
   );
 };

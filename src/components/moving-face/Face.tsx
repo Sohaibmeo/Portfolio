@@ -21,7 +21,7 @@ const Face = ({
   );
   const moveDown = useTransform(scrollYProgress, [0, 0.5, 1], [0, 25, 25]);
   const fadeIn = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
-  const fadeOut = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
+  const fadeOut = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [1, 1, 0, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.6]);
 
   return (
@@ -67,7 +67,7 @@ const Face = ({
       </motion.svg>
 
       <Pipes scrollYProgress={scrollYProgress} />
-      <BloodContainers />
+      <BloodContainers scrollYProgress={scrollYProgress} />
 
       <motion.div
         className="hair"
@@ -80,7 +80,6 @@ const Face = ({
         style={{ y: moveDown }}
       />
       <Eyes moveDown={moveDown} position={position} />
-      
     </motion.div>
   );
 };

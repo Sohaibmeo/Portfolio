@@ -10,8 +10,8 @@ const Pipes = ({
 }) => {
   const strokeDashoffset = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    [-700, -700, 0],
+    [0, 0.7, 0.85, 1],
+    [-700, -700, 0, 0],
   );
   return (
     <React.Fragment>
