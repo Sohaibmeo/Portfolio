@@ -16,6 +16,18 @@
   }
 }
 
+@keyframes breath {
+  0% {
+    transform: translate(-50%, -15%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -15%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -15%) scale(1);
+  }
+}
+
 .face {
   --imagesize-hair: calc(var(--base-size) * 4.5);
   --imagesize-beard: calc(var(--imagesize-hair) * 2);
@@ -43,7 +55,8 @@
   width: var(--imagesize-brain);
   aspect-ratio: 1;
   background-color: var(--background-color-dark);
-  z-index: var(--zindex-above-normal);
+  z-index: var(--zindex-below-normal);
+  animation: breath 1s ease-in-out infinite alternate;
 }
 
 .beard-svg,
@@ -89,7 +102,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    gap: 8px;
+    gap: 40px;
   }
   .face > *{
     position: relative;

@@ -14,10 +14,12 @@ const Home: React.FC = () => {
   const handleMouseMove = useCallback((event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
     const posY = (event.clientY - window.innerHeight / 2) / window.innerHeight;
+    console.log("Position : ", posX, posY)
     setPosition({ x: posX, y: posY });
   }, []);
 
   const handleMouseEnter = useCallback(() => {
+    console.log("Mouse Enter");
     document.addEventListener("mousemove", handleMouseMove);
   }, [handleMouseMove]);
   const handleMouseLeave = useCallback(() => {
@@ -29,7 +31,7 @@ const Home: React.FC = () => {
       className="home-container"
       onViewportEnter={handleMouseEnter}
       onViewportLeave={handleMouseLeave}
-      viewport={{ amount: 0.5 }}
+      viewport={{ amount: 0.1 }}
     >
       <div className="section home-face-container">
         <Face position={position} scrollYProgress={scrollYProgress} />

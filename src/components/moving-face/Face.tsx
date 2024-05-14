@@ -21,18 +21,17 @@ const Face = ({
     ["0%", "-100%", "-100%"],
   );
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
-  console.log(isSmall)
   const moveDown = useTransform(scrollYProgress, [0, 0.5, 1], [0, 25, 25]);
-  const fadeIn = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
-  const fadeOut = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [1, 1, 0, 0]);
+  const fadeIn = useTransform(scrollYProgress, [0, 0.05, 0.3, 1], [0, 0, 1, 1]);
+  const fadeOut = useTransform(scrollYProgress, [0, 0.05, 0.3, 1], [1, 1, 0, 0]);
   const scale = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    [1, isSmall ? 1 : 0.6, isSmall ? 1 : 0.6],
+    [0, 0.3, 0.4, 1],
+    [1, 1, isSmall ? 1 : 0.6, isSmall ? 1 : 0.6],
   );
 
   return (
-    <motion.div className="face" initial={{ scale: 0 }} style={{ scale }}>
+    <motion.div className="face" initial={{ scale: 1 }} style={{ scale }}>
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
           <path d={getHairClipPath()}></path>
@@ -59,22 +58,14 @@ const Face = ({
       <motion.svg
         className="brain-svg"
         viewBox="136.468 80.554 752.233 597.365"
-        initial={{ x: "-50%", y: "-15%", scale: 1 }}
-        animate={{
-          scale: 1.05,
-          transition: {
-            repeat: Infinity,
-            repeatType: "reverse",
-            duration: 1,
-          },
-        }}
+        initial={{ scale: 1 }}
         style={{ opacity: fadeIn }}
       >
         <path d={getBrainClipPath()}></path>
       </motion.svg>
 
       <Pipes scrollYProgress={scrollYProgress} />
-      <BloodContainers scrollYProgress={scrollYProgress} isSmall/>
+      <BloodContainers scrollYProgress={scrollYProgress} isSmall={isSmall} />
 
       <motion.div
         className="hair"

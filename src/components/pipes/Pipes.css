@@ -2,7 +2,6 @@
   fill: none;
   height: auto;
   stroke: var(--background-color-dark);
-  z-index: var(--zindex-below-normal);
   stroke-width: 10px;
   width: var(--imagesize-pipe);
 }
@@ -10,6 +9,7 @@
 .pipes-container-left,
 .pipes-container-right {
   display: flex;
+  z-index: var(--zindex-media);
   gap: calc(var(--imagesize-brain) * 0.99);
 }
 

@@ -2,6 +2,7 @@ import { motion, MotionValue, useTransform } from "framer-motion";
 import Skills from "../skills/Skill";
 import React from "react";
 import "./BloodContainers.css";
+import EcgMonitorLoading from "../loading-ecg-monitor/EcgMonitorLoading";
 
 const BloodContainers = ({
   scrollYProgress,
@@ -10,12 +11,12 @@ const BloodContainers = ({
   scrollYProgress: MotionValue<number>;
   isSmall: boolean;
 }) => {
-  const opacity = useTransform(
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.4, 1], [0, 0, 1, 1]);
+  const thirdOpacity = useTransform(
     scrollYProgress,
-    [0, 0.55, 0.7, 1],
+    [0, 0.91, 0.93, 1],
     [0, 0, 1, 1],
   );
-  const textOpacity = useTransform(scrollYProgress, [0, 0.85, 1], [0, 0, 1]);
   return (
     <React.Fragment>
       <motion.div
@@ -24,40 +25,57 @@ const BloodContainers = ({
         style={{ opacity }}
       >
         <div className="leftBox">
-          <h2>About Me</h2>
-          <motion.p
-            className="about-text"
+          <div className="loading-monitor">
+            <EcgMonitorLoading
+              scrollProgress={scrollYProgress}
+              imageNumber={1}
+            />
+          </div>
+          <motion.div
+            className="monitor-text"
             initial={{ opacity: 0 }}
-            style={{ opacity: textOpacity }}
+            style={{ opacity: thirdOpacity }}
           >
-            Resourceful Software Engineer with in-depth knowledge of Front End
-            Web Development. Experience handling complex HTML and CSS coding,
-            Javascript And ReactJS design and extensions to meet organization's
-            front-facing internet needs. Detail-oriented collaboration with
-            others to define project expectations and demand. Hands-on testing
-            and debugging to address inconsistencies and maintain performance
-            thresholds.
-          </motion.p>
+            <h2>About Me</h2>
+            <p className="about-text">
+              Resourceful Software Engineer with in-depth knowledge of Front End
+              Web Development. Experience handling complex HTML and CSS coding,
+              Javascript And ReactJS design and extensions to meet
+              organization's front-facing internet needs. Detail-oriented
+              collaboration with others to define project expectations and
+              demand. Hands-on testing and debugging to address inconsistencies
+              and maintain performance thresholds.
+            </p>
+          </motion.div>
         </div>
         <div className="rightBox">
-          <h2>Experience</h2>
-          <motion.p
-            className="about-text"
+          <div className="loading-monitor">
+            <EcgMonitorLoading
+              scrollProgress={scrollYProgress}
+              imageNumber={2}
+            />
+          </div>
+          <motion.div
+            className="monitor-text"
             initial={{ opacity: 0 }}
-            style={{ opacity: textOpacity }}
+            style={{ opacity: thirdOpacity }}
           >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            nemo consequuntur alias sed magnam repudiandae aliquid, quae
-            deserunt qui sequi consectetur culpa dolores vero itaque provident.
-            Neque eligendi commodi voluptatibus? Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Dolorem nemo consequuntur alias sed
-            magnam repudiandae aliquid, quae deserunt qui sequi consectetur
-            culpa dolores vero itaque provident. Neque eligendi commodi
-            voluptatibus? Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Dolorem nemo consequuntur alias sed magnam repudiandae
-            aliquid, quae deserunt qui sequi consectetur culpa dolores vero
-            itaque provident. Neque eligendi commodi voluptatibus?
-          </motion.p>
+            <h2>Experience</h2>
+            <p className="about-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              nemo consequuntur alias sed magnam repudiandae aliquid, quae
+              deserunt qui sequi consectetur culpa dolores vero itaque
+              provident. Neque eligendi commodi voluptatibus? Lorem, ipsum dolor
+              sit amet consectetur adipisicing elit. Dolorem nemo consequuntur
+              alias sed magnam repudiandae aliquid, quae deserunt qui sequi
+              consectetur culpa dolores vero itaque provident. Neque eligendi
+              commodi voluptatibus? Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Dolorem nemo consequuntur alias sed magnam
+              repudiandae aliquid, quae deserunt qui sequi consectetur culpa
+              dolores vero itaque provident. Neque eligendi commodi
+              voluptatibus?
+            </p>
+          </motion.div>
         </div>
       </motion.div>
       <motion.div
@@ -66,30 +84,51 @@ const BloodContainers = ({
         style={{ opacity }}
       >
         <div className="leftBox">
-          <h2>Skills</h2>
-          <motion.ul initial={{ opacity: 0 }} style={{ opacity: textOpacity }}>
-            {<Skills width={isSmall ? "20px": "40px"} />}
-          </motion.ul>
+          <div className="loading-monitor">
+            <EcgMonitorLoading
+              scrollProgress={scrollYProgress}
+              imageNumber={3}
+            />
+          </div>
+          <motion.div
+            className="monitor-text"
+            initial={{ opacity: 0 }}
+            style={{ opacity: thirdOpacity }}
+          >
+            <h2>Skills</h2>
+            <ul style={{ margin: 0, padding: 0 }}>
+              {<Skills width={isSmall ? "20px" : "40px"} />}
+            </ul>
+          </motion.div>
         </div>
         <div className="rightBox">
-          <h2>Education</h2>
-          <motion.p
-            className="about-text"
+          <div className="loading-monitor">
+            <EcgMonitorLoading
+              scrollProgress={scrollYProgress}
+              imageNumber={4}
+            />
+          </div>
+          <motion.div
+            className="monitor-text"
             initial={{ opacity: 0 }}
-            style={{ opacity: textOpacity }}
+            style={{ opacity: thirdOpacity }}
           >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            nemo consequuntur alias sed magnam repudiandae aliquid, quae
-            deserunt qui sequi consectetur culpa dolores vero itaque provident.
-            Neque eligendi commodi voluptatibus? Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Dolorem nemo consequuntur alias sed
-            magnam repudiandae aliquid, quae deserunt qui sequi consectetur
-            culpa dolores vero itaque provident. Neque eligendi commodi
-            voluptatibus? Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Dolorem nemo consequuntur alias sed magnam repudiandae
-            aliquid, quae deserunt qui sequi consectetur culpa dolores vero
-            itaque provident. Neque eligendi commodi voluptatibus?
-          </motion.p>
+            <h2>Education</h2>
+            <p className="about-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              nemo consequuntur alias sed magnam repudiandae aliquid, quae
+              deserunt qui sequi consectetur culpa dolores vero itaque
+              provident. Neque eligendi commodi voluptatibus? Lorem, ipsum dolor
+              sit amet consectetur adipisicing elit. Dolorem nemo consequuntur
+              alias sed magnam repudiandae aliquid, quae deserunt qui sequi
+              consectetur culpa dolores vero itaque provident. Neque eligendi
+              commodi voluptatibus? Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Dolorem nemo consequuntur alias sed magnam
+              repudiandae aliquid, quae deserunt qui sequi consectetur culpa
+              dolores vero itaque provident. Neque eligendi commodi
+              voluptatibus?
+            </p>
+          </motion.div>
         </div>
       </motion.div>
     </React.Fragment>
