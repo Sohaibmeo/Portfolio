@@ -1,3 +1,15 @@
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 :root {
   --background-color: floralwhite;
   --background-color-dark: #414446;
@@ -108,7 +120,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  background-color: var(--dark-first);
+  background-color: var(--background-color);
 }
 
 button:hover {

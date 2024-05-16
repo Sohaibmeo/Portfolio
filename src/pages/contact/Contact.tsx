@@ -1,114 +1,88 @@
+import { useState } from "react";
+import getHeartBeatSvgPath from "../../utils/data/getHeartBeatSvgPath";
+import getHeartSvgPath from "../../utils/data/getHeartSvgPath";
 import "./Contact.css";
-import Linkedin from "../../assets/linkedin.svg";
-import Instagram from "../../assets/instagram.svg";
-import Whatsapp from "../../assets/whatsapp.svg";
-// import { useState } from "react";
+import Linkedin from "../../assets/social/linkedin.svg";
+import Instagram from "../../assets/social/instagram.svg";
+import Whatsapp from "../../assets/social/whatsapp.svg";
+import Email from "../../assets/social/email.svg";
 
 const Contact = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // });
-  // const handleSubmit = (e: any) => {
-  //   e.preventDefault();
-  //   setFormData({
-  //     name: "",
-  //     email: "",
-  //     message: "",
-  //   });
-  // };
+  const [hover, setHover] = useState(false);
   return (
     <section id="contact" className="section contact-container">
-      <div>
-        <h2 className="section-title">Contact</h2>
-        <div className="contact-form-container">
-          <form className="contact-form" 
-          // onSubmit={handleSubmit}
+      <div className="social-links">
+        <a
+          href="https://www.linkedin.com/in/rodrigo-ramos-1b1b7b1b/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={Linkedin} alt="Linkedin" />
+        </a>
+        <a
+          href="https://www.instagram.com/rodrigo_ramos_/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={Instagram} alt="Instagram" />
+        </a>
+        <a
+          href="https://api.whatsapp.com/send?phone=5511988888888"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={Whatsapp} alt="Whatsapp" />
+        </a>
+        <a
+          href="https://api.whatsapp.com/send?phone=5511988888888"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={Email} alt="Email" />
+        </a>
+      </div>
+      <div className={`heart ${hover ? "faster" : ""}`}>
+        <svg viewBox="0 0 2454 3645">
+          <path d={getHeartSvgPath()} />
+        </svg>
+      </div>
+      <div className={`heart-beat ${hover ? "rate-faster" : ""}`}>
+        <svg viewBox="0 0 1689.000000 430.000000">
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop
+                offset="0%"
+                style={{ stopColor: "grey", stopOpacity: 0.3 }}
+              />
+              <stop
+                offset="50%"
+                style={{ stopColor: "white", stopOpacity: 1 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "grey", stopOpacity: 0.3 }}
+              />
+            </linearGradient>
+          </defs>
+          <g transform="translate(0.000000,430.000000) scale(0.100000,-0.100000)">
+            <path d={getHeartBeatSvgPath()} id="path" />
+          </g>
+        </svg>
+      </div>
+      <div className="contact-form">
+        <h2>Get in touch</h2>
+        <form style={{ display: "flex", flexDirection: "column" }}>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Message"></textarea>
+          <button
+            type="submit"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
           >
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              // onChange={(e) =>
-              //   setFormData((prev) => ({
-              //     ...prev,
-              //     [e.target.name]: e.target.value,
-              //   }))
-              // }
-            />
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              // onChange={(e) =>
-              //   setFormData((prev) => ({
-              //     ...prev,
-              //     [e.target.name]: e.target.value,
-              //   }))
-              // }
-            />
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              // onChange={(e) =>
-              //   setFormData((prev) => ({
-              //     ...prev,
-              //     [e.target.name]: e.target.value,
-              //   }))
-              // }
-            />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <div className="social-links-container">
-          <a
-            href="https://www.linkedin.com/in/sohaibfinale/"
-            target="_blank"
-            rel="noreferrer"
-            className="social-link"
-          >
-            <img
-              src={Linkedin}
-              alt="linkedin"
-              width={"30px"}
-              style={{ aspectRatio: 1 }}
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/sohaib_mao/"
-            target="_blank"
-            rel="noreferrer"
-            className="social-link"
-          >
-            <img
-              src={Instagram}
-              alt="instagram"
-              width={"30px"}
-              style={{ aspectRatio: 1 }}
-            />
-          </a>
-          <a
-            href="
-            https://wa.link/h1wwvu"
-            target="_blank"
-            rel="noreferrer"
-            className="social-link"
-          >
-            <img
-              src={Whatsapp}
-              alt="whatsapp"
-              width={"30px"}
-              style={{ aspectRatio: 1 }}
-            />
-          </a>
-        </div>
+            Send
+          </button>
+        </form>
       </div>
     </section>
   );
