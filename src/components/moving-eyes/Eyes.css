@@ -27,13 +27,14 @@
   width: calc(var(--width) / 2);
   border-radius: 100%;
   position: relative;
+  background-color: var(--background-color-dark);
 }
 
 .left-eyeball-shine::before,
 .right-eyeball-shine::before {
   content: "";
   position: absolute;
-  border: 10px double var(--background-color-dark);
+  border: 10px double var(--background-color);
   width: 20%;
   height: 20%;
   border-radius: 100%;
@@ -75,16 +76,5 @@
   .right-eye {
     width: var(--imagesize-eye);
     height: calc(var(--imagesize-eye) * 0.506);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .left-eyeball-shine::before,
-  .right-eyeball-shine::before {
-    border-color: var(--background-color);
-  }
-  .left-eyeball-shine,
-  .right-eyeball-shine {
-    background-color: var(--background-color-dark);
   }
 }

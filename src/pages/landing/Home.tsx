@@ -2,8 +2,6 @@ import { motion, useScroll } from "framer-motion";
 import React, { useCallback, useRef, useState } from "react";
 import Face from "../../components/moving-face/Face";
 import "./Home.css";
-import Projects from "../projects/Projects";
-import Contact from "../contact/Contact";
 
 const Home: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });

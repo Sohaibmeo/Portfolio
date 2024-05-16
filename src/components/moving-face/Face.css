@@ -54,23 +54,24 @@
 .brain-svg {
   width: var(--imagesize-brain);
   aspect-ratio: 1;
-  background-color: var(--background-color-dark);
+  background-color: var(--background-color);
   z-index: var(--zindex-below-normal);
   animation: breath 1s ease-in-out infinite alternate;
 }
 
 .beard-svg,
 .brain-svg {
-  fill: var(--background-color);
+  fill: var(--background-color-dark);
 }
 
+.outer-eyes,
 .left-eye,
 .right-eye,
 .eyes,
 .hair,
 .left-eyeball-shine,
 .right-eyeball-shine {
-  background-color: var(--background-color);
+  background-color: var(--background-color-dark);
   z-index: var(--zindex-above-normal);
 }
 
@@ -112,22 +113,5 @@
   }
   .face > *:not(.blood-container) {
     display: none;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .left-eye,
-  .right-eye,
-  .outer-eyes,
-  .beard,
-  .hair {
-    background-color: var(--background-color-dark);
-  }
-  .brain-svg,
-  .beard-svg {
-    fill: var(--background-color-dark);
-  }
-  .brain-svg {
-    background-color: var(--background-color);
   }
 }
