@@ -2,10 +2,10 @@ import React from "react";
 import "./EcgMonitorLoading.css";
 
 import { motion, MotionValue, useTransform } from "framer-motion";
-import Left from "../../assets/monitor/left.png";
-import Right from "../../assets/monitor/right.png";
-import Side from "../../assets/monitor/side.png";
-import Top from "../../assets/monitor/top.png";
+import Left from "../../assets/brain/left.svg";
+import Right from "../../assets/brain/right.svg";
+import Side from "../../assets/brain/side.svg";
+import Top from "../../assets/brain/top.svg";
 
 const EcgMonitorLoading = ({
   scrollProgress,
@@ -45,7 +45,7 @@ const EcgMonitorLoading = ({
                     : "none"
           }
           alt=""
-          width={"300px"}
+          className="brain-img"
         />
         <h3>Loading...</h3>
       </motion.div>

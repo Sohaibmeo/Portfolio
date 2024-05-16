@@ -14,7 +14,6 @@ const Home: React.FC = () => {
   const handleMouseMove = useCallback((event: any) => {
     const posX = (event.clientX - window.innerWidth / 2) / window.innerWidth;
     const posY = (event.clientY - window.innerHeight / 2) / window.innerHeight;
-    console.log("Position : ", posX, posY)
     setPosition({ x: posX, y: posY });
   }, []);
 
