@@ -47,18 +47,18 @@ const Projects = () => {
   );
   const defaultTransitionTime = 1;
 
-  const svgHandVariants = {
-    hidden: { y: "100vh", opacity: 0 },
-    visible: {
-      y: "-43vh",
-      opacity: 1,
-      fill: "var(--background-color-dark)",
-      transition: {
-        duration: defaultTransitionTime,
-        type: "spring",
-      },
-    },
-  };
+  // const svgHandVariants = {
+  //   hidden: { y: "100vh", opacity: 0 },
+  //   visible: {
+  //     y: "-43vh",
+  //     opacity: 1,
+  //     fill: "var(--background-color-dark)",
+  //     transition: {
+  //       duration: defaultTransitionTime,
+  //       type: "spring",
+  //     },
+  //   },
+  // };
 
   const textVariants = {
     hidden:{ y: "160vh", opacity: 1 },
@@ -96,9 +96,9 @@ const Projects = () => {
           Projects
         </motion.h1>
         <motion.svg
-          initial="hidden"
-          animate={controls}
-          variants={svgHandVariants}
+          // initial="hidden"
+          // animate={controls}
+          // variants={svgHandVariants}
           viewBox="0 162.455 939.105 324.685"
           style={{ y }}
         >

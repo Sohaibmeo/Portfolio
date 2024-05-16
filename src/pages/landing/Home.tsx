@@ -7,7 +7,16 @@ import Contact from "../contact/Contact";
 
 const Home: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [hidden, setHidden] = useState(true);
   const ref = useRef(null);
+  const onViewPortEnter = () => {
+    console.log("In Viewport");
+    setHidden(false);
+  };
+  const onViewPortLeave = () => {
+    console.log("Out of Viewport");
+    setHidden(true);
+  };
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end end"],
@@ -32,9 +41,11 @@ const Home: React.FC = () => {
       className="home-container"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onViewportEnter={onViewPortEnter}
+      onViewportLeave={onViewPortLeave}
       viewport={{ amount: 0.1 }}
     >
-      <div className="section home-face-container">
+      <div className={`section home-face-container ${hidden ? "hidden" : ""}`}>
         <Face position={position} scrollYProgress={scrollYProgress} />
       </div>
       <motion.section id="home" className="section hero-container">
@@ -46,8 +57,6 @@ const Home: React.FC = () => {
         </div>
       </motion.section>
       <section className="about-container section" id="about" ref={ref} />
-      <Projects />
-      <Contact />
     </motion.div>
   );
 };

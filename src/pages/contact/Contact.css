@@ -1,17 +1,12 @@
 .contact-container {
+    width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-color-dark);
+    border-top: 2px solid red;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
     column-gap: 2;
-}
-
-@media (prefers-color-scheme: light) {
-    .contact-container {
-      background-color: var(--background-color);
-    }
 }
