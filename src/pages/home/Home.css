@@ -38,6 +38,6 @@
 
 .about-container {
   position: relative;
-  height: 150vh;
+  height: 100vh;
   z-index: var(--zindex-below-normal);
 }

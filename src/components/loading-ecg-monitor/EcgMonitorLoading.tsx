@@ -16,12 +16,12 @@ const EcgMonitorLoading = ({
 }) => {
   const secondOpacity = useTransform(
     scrollProgress,
-    [0, 0.85, 0.86, 0.9, 0.91, 1],
+    [0, 0.40, 0.41, 0.6, 0.61, 1],
     [0, 0, 1, 1, 0, 0],
   );
   const firstOpacity = useTransform(
     scrollProgress,
-    [0, 0.84, 0.85, 1],
+    [0, 0.40, 0.41, 1],
     [1, 1, 0, 0],
   );
 

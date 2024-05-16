@@ -22,11 +22,11 @@ const Face = ({
   );
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const moveDown = useTransform(scrollYProgress, [0, 0.5, 1], [0, 25, 25]);
-  const fadeIn = useTransform(scrollYProgress, [0, 0.05, 0.3, 1], [0, 0, 1, 1]);
-  const fadeOut = useTransform(scrollYProgress, [0, 0.05, 0.3, 1], [1, 1, 0, 0]);
+  const fadeIn = useTransform(scrollYProgress, [0, 0.05, 0.2, 1], [0, 0, 1, 1]);
+  const fadeOut = useTransform(scrollYProgress, [0, 0.05, 0.2, 1], [1, 1, 0, 0]);
   const scale = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.4, 1],
+    [0, 0.1, 0.2, 1],
     [1, 1, isSmall ? 1 : 0.6, isSmall ? 1 : 0.6],
   );
 

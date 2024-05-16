@@ -11,10 +11,10 @@ const BloodContainers = ({
   scrollYProgress: MotionValue<number>;
   isSmall: boolean;
 }) => {
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.4, 1], [0, 0, 1, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.2, 1], [0, 0, 1, 1]);
   const thirdOpacity = useTransform(
     scrollYProgress,
-    [0, 0.91, 0.93, 1],
+    [0, 0.61, 0.63, 1],
     [0, 0, 1, 1],
   );
   return (
