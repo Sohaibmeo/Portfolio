@@ -1,4 +1,4 @@
-import SelfPortrait from "../assets/real2.png";
+import SelfPortrait from "../assets/self/real.png";
 
 export default function getProjectData() {
   return [
