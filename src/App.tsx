@@ -1,5 +1,5 @@
 import Navbar from "./components/navbar/Navbar";
-import Home from "./pages/home/Home";
+import Home from "./pages/landing/Home";
 import Loading from "./pages/loading/Loading";
 import Contact from "./pages/contact/Contact";
 import CursorAnimation from "./components/cursor-animation/CursorAnimation";
