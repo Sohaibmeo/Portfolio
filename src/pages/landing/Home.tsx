@@ -3,6 +3,7 @@ import React, { useCallback, useRef, useState } from "react";
 import Face from "../../components/moving-face/Face";
 import "./Home.css";
 import Projects from "../projects/Projects";
+import Contact from "../contact/Contact";
 
 const Home: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -46,6 +47,7 @@ const Home: React.FC = () => {
       </motion.section>
       <section className="about-container section" id="about" ref={ref} />
       <Projects />
+      <Contact />
     </motion.div>
   );
 };

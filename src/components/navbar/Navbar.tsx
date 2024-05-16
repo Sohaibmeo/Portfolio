@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./Navbar.css";
 import { useCursor } from "../../contexts/Cursor";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { handleMouseEnterAnimation } = useCursor();
@@ -12,13 +11,13 @@ const Navbar = () => {
     <div className="navbar-container">
       <div className="navbar">
         <div>
-          <Link to="/">MSM</Link>
+          <a href="#">MSM</a>
         </div>
         <div className="navbar-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <Link to="#projects">Projects</Link>
-          <Link to="/contact">Contact</Link>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </div>
