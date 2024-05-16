@@ -2,6 +2,7 @@ import { motion, useScroll } from "framer-motion";
 import React, { useCallback, useRef, useState } from "react";
 import Face from "../../components/moving-face/Face";
 import "./Home.css";
+import Projects from "../projects/Projects";
 
 const Home: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -28,14 +29,14 @@ const Home: React.FC = () => {
   return (
     <motion.div
       className="home-container"
-      onViewportEnter={handleMouseEnter}
-      onViewportLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       viewport={{ amount: 0.1 }}
     >
       <div className="section home-face-container">
         <Face position={position} scrollYProgress={scrollYProgress} />
       </div>
-      <motion.section className="section hero-container">
+      <motion.section id="home" className="section hero-container">
         <div className="home-buttons home-contact">
           <h3>Contact Me</h3>
         </div>
@@ -43,8 +44,8 @@ const Home: React.FC = () => {
           <h3>My Work</h3>
         </div>
       </motion.section>
-      <section className="about-container" ref={ref} />
-      <br id="about" />
+      <section className="about-container section" id="about" ref={ref} />
+      <Projects />
     </motion.div>
   );
 };

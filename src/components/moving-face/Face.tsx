@@ -20,10 +20,15 @@ const Face = ({
     [0, 0.5, 1],
     ["0%", "-100%", "-100%"],
   );
+  const endOpacity = useTransform(scrollYProgress, [0, 0.96, 1], [1, 1, 0]);
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const moveDown = useTransform(scrollYProgress, [0, 0.5, 1], [0, 25, 25]);
   const fadeIn = useTransform(scrollYProgress, [0, 0.05, 0.2, 1], [0, 0, 1, 1]);
-  const fadeOut = useTransform(scrollYProgress, [0, 0.05, 0.2, 1], [1, 1, 0, 0]);
+  const fadeOut = useTransform(
+    scrollYProgress,
+    [0, 0.05, 0.2, 1],
+    [1, 1, 0, 0],
+  );
   const scale = useTransform(
     scrollYProgress,
     [0, 0.1, 0.2, 1],
@@ -31,7 +36,11 @@ const Face = ({
   );
 
   return (
-    <motion.div className="face" initial={{ scale: 1 }} style={{ scale }}>
+    <motion.div
+      className="face"
+      initial={{ scale: 1 }}
+      style={{ scale, opacity: endOpacity }}
+    >
       <svg className="svg">
         <clipPath id="hair-clip" clipPathUnits="objectBoundingBox">
           <path d={getHairClipPath()}></path>

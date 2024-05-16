@@ -4,11 +4,10 @@ import Loading from "./pages/loading/Loading";
 import Contact from "./pages/contact/Contact";
 import CursorAnimation from "./components/cursor-animation/CursorAnimation";
 import { Route, Routes } from "react-router-dom";
-import Projects from "./pages/projects/Projects";
-// import useLenis from "./utils/helper/lenisScroll";
+import useLenis from "./utils/helper/lenisScroll";
 
 function App() {
-  // useLenis();
+  useLenis();
 
   return (
     <>
@@ -17,7 +16,6 @@ function App() {
       <CursorAnimation />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="projects" element={<Projects />} />
         <Route path="contact" element={<Contact />} />
 
         <Route
