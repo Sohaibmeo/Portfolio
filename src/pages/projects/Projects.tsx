@@ -33,6 +33,8 @@ const Projects = () => {
     ],
   );
 
+  const opacity = useTransform(scrollYProgress, [0, 0.99, 1], [1, 1, 0])
+
   const textMove = useTransform(
     scrollYProgress,
     [0, 0.1, 1],
@@ -78,7 +80,9 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       onViewportEnter={whenVisible}
+      onViewportLeave={() => controls.start("hidden")}
       className="project-container"
+      style={{ opacity }}
       ref={ref}
     >
       <motion.div className="hand-animation-section">
