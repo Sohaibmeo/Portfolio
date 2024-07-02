@@ -24,19 +24,18 @@
   width: 100%;
   color: var(--background-color);
   background-color: var(--black);
-  background-position: -50%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .heart-beat {
   width: 40vw;
-  height: 100px;
-  position: absolute;
-  top: 73vh;
+  height: 17vh;
   fill: none;
-  stroke: url(#gradient);
-  stroke-width: 50px;
+  stroke: var(--background-color);
+  stroke-width: 100px;
   stroke-dashoffset: 56384;
   stroke-dasharray: 11277 45107;
   animation: fill-all 3s infinite linear;
@@ -46,6 +45,13 @@
   fill: var(--background-color);
   width: 300px;
   animation: heart-beat 1s ease-in-out infinite;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .faster {

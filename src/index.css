@@ -96,7 +96,8 @@ html {
 }
 
 p {
-  font-size: var(--dynamic-font-small);
+  /* font-size: calc(var(--dynamic-font-small) * 2); */
+  font-size: 24px;
   font-weight: 400;
 }
 

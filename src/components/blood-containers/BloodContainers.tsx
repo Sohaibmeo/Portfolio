@@ -38,13 +38,10 @@ const BloodContainers = ({
           >
             <h2>About Me</h2>
             <p className="about-text">
-              Resourceful Software Engineer with in-depth knowledge of Front End
-              Web Development. Experience handling complex HTML and CSS coding,
-              Javascript And ReactJS design and extensions to meet
-              organization's front-facing internet needs. Detail-oriented
-              collaboration with others to define project expectations and
-              demand. Hands-on testing and debugging to address inconsistencies
-              and maintain performance thresholds.
+              Resourceful Software Engineer,Detail-oriented collaboration with
+              others to define project expectations and demand. Hands-on testing
+              and debugging to address inconsistencies and maintain performance
+              thresholds.
             </p>
           </motion.div>
         </div>
@@ -62,18 +59,11 @@ const BloodContainers = ({
           >
             <h2>Experience</h2>
             <p className="about-text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              nemo consequuntur alias sed magnam repudiandae aliquid, quae
-              deserunt qui sequi consectetur culpa dolores vero itaque
-              provident. Neque eligendi commodi voluptatibus? Lorem, ipsum dolor
-              sit amet consectetur adipisicing elit. Dolorem nemo consequuntur
-              alias sed magnam repudiandae aliquid, quae deserunt qui sequi
-              consectetur culpa dolores vero itaque provident. Neque eligendi
-              commodi voluptatibus? Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Dolorem nemo consequuntur alias sed magnam
-              repudiandae aliquid, quae deserunt qui sequi consectetur culpa
-              dolores vero itaque provident. Neque eligendi commodi
-              voluptatibus?
+              Software Engineer - Devsinc · Full-time <br />
+              <span>Mar 2022 - Apr 4 2024</span> <br />
+              Software Engineer Internship - Devsinc - Part-time
+              Part-timeDevsinc · Part-time <br />
+              <span>Oct 2021 - Jan 2022</span>
             </p>
           </motion.div>
         </div>
@@ -115,18 +105,10 @@ const BloodContainers = ({
           >
             <h2>Education</h2>
             <p className="about-text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              nemo consequuntur alias sed magnam repudiandae aliquid, quae
-              deserunt qui sequi consectetur culpa dolores vero itaque
-              provident. Neque eligendi commodi voluptatibus? Lorem, ipsum dolor
-              sit amet consectetur adipisicing elit. Dolorem nemo consequuntur
-              alias sed magnam repudiandae aliquid, quae deserunt qui sequi
-              consectetur culpa dolores vero itaque provident. Neque eligendi
-              commodi voluptatibus? Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Dolorem nemo consequuntur alias sed magnam
-              repudiandae aliquid, quae deserunt qui sequi consectetur culpa
-              dolores vero itaque provident. Neque eligendi commodi
-              voluptatibus?
+              Bachelor of Computer Science <span>2018 - July 2022</span>
+              University of Computer And Emerging Sciences,Islamabad,Pakistan
+              Pre-Engineering <span>2016 - 2018</span>
+              Bright Future Internation School
             </p>
           </motion.div>
         </div>

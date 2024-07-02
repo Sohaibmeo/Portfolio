@@ -11,40 +11,58 @@ const Contact = () => {
   const [hover, setHover] = useState(false);
   return (
     <section id="contact" className="section contact-container">
-      <div className="social-links">
-        <a
-          href="https://www.linkedin.com/in/rodrigo-ramos-1b1b7b1b/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={Linkedin} alt="Linkedin" />
-        </a>
-        <a
-          href="https://www.instagram.com/rodrigo_ramos_/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={Instagram} alt="Instagram" />
-        </a>
-        <a
-          href="https://api.whatsapp.com/send?phone=5511988888888"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={Whatsapp} alt="Whatsapp" />
-        </a>
-        <a
-          href="https://api.whatsapp.com/send?phone=5511988888888"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={Email} alt="Email" />
-        </a>
-      </div>
-      <div className={`heart ${hover ? "faster" : ""}`}>
-        <svg viewBox="0 0 2454 3645">
-          <path d={getHeartSvgPath()} />
-        </svg>
+      <h1>CONTACT</h1>
+      <div className="contact-content">
+        <div className="social-links">
+          <a
+            href="https://www.linkedin.com/in/rodrigo-ramos-1b1b7b1b/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Linkedin} alt="Linkedin" />
+          </a>
+          <a
+            href="https://www.instagram.com/rodrigo_ramos_/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Instagram} alt="Instagram" />
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=5511988888888"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Whatsapp} alt="Whatsapp" />
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=5511988888888"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Email} alt="Email" />
+          </a>
+        </div>
+        <div className={`heart ${hover ? "faster" : ""}`}>
+          <svg viewBox="0 0 2454 3645">
+            <path d={getHeartSvgPath()} />
+          </svg>
+        </div>
+        <div className="contact-form">
+          <h2>Send A Message</h2>
+          <form style={{ display: "flex", flexDirection: "column" }}>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message"></textarea>
+            <button
+              type="submit"
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            >
+              Send
+            </button>
+          </form>
+        </div>
       </div>
       <div className={`heart-beat ${hover ? "rate-faster" : ""}`}>
         <svg viewBox="0 0 1689.000000 430.000000">
@@ -68,21 +86,6 @@ const Contact = () => {
             <path d={getHeartBeatSvgPath()} id="path" />
           </g>
         </svg>
-      </div>
-      <div className="contact-form">
-        <h2>Get in touch</h2>
-        <form style={{ display: "flex", flexDirection: "column" }}>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
-          <button
-            type="submit"
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-          >
-            Send
-          </button>
-        </form>
       </div>
     </section>
   );
